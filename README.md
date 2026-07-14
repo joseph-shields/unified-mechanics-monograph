@@ -1,92 +1,70 @@
-# Unified Mechanics
+from pathlib import Path
 
-*A mathematical reconstruction programme.*
+readme = """# Unified Mechanics
 
-Unified Mechanics explores a simple question:
+Unified Mechanics is an independent research programme exploring whether many familiar structures in mathematics and physics can be understood through one shared systems-level framework.
 
-> **Can the mathematical structures of physics be reconstructed rather than assumed?**
+The project distinguishes between:
 
-Instead of taking concepts such as geometry, observables, action principles, and continuum structure as primitive, the programme investigates whether they can emerge as canonical consequences of a smaller operational foundation.
+- the abstract rules used to describe systems,
+- the physical systems that realise those rules,
+- the local conditions that shape their behaviour,
+- and the records through which those systems become observable.
 
-The project combines ideas from:
+The framework does not claim that mathematics alone creates a universe from nothing. Its aim is to describe how real systems retain identity, interact with their surroundings, transform over time, and leave measurable records.
 
-* Emergent geometry
-* Inverse variational theory
-* Behavioural quotients
-* Category theory
-* Canonical reconstruction
-* Mathematical physics
+## What this repository contains
 
-This repository contains the evolving research monograph, supporting appendices, formal theorems, derivations, and ongoing notes.
+This repository includes:
 
----
+- the main Unified Mechanics monograph,
+- a compact edition of the monograph,
+- formal appendices and supporting arguments,
+- Universopedia, the observational and language framework,
+- the Realisation and Self-Description Principle,
+- research notes, tests, and open problems.
 
-## Central Question
+## Universopedia
 
-Rather than asking
+Universopedia is the bridge between the observed world and the abstract framework.
 
-> *"What equations describe reality?"*
+It begins with familiar physical systems such as atoms, stars, galaxies, black holes, and living systems. It records what is directly observed, what is inferred, which local conditions matter, and how each system can be compressed into a common systems description.
 
-Unified Mechanics asks
+The Familiarity Kernel identifies recorded structure that has not yet been placed into a stable and validated physical class.
 
-> *"What is the smallest mathematical structure from which those equations can be reconstructed?"*
+## Current status
 
----
+Unified Mechanics is an active research programme.
 
-## Current Status
+Some parts are formal mathematical results. Others are conditional constructions, interpretations, conjectures, or open problems. The documents aim to label those differences clearly.
 
-This is an active research programme.
+The main current goal is not to replace successful physical theories with a single fitting formula. It is to investigate whether their structures can be connected through a shared account of systems, boundaries, local conditions, transformation, and observation.
 
-The repository contains both established mathematical results and open conjectures. Each claim is explicitly identified as one of:
+## How to read the repository
 
-* **Theorem** – proved within the framework.
-* **Conditional Theorem** – follows under stated assumptions.
-* **Conjecture** – mathematically motivated but unproven.
-* **Open Problem** – an identified research target.
+A useful reading order is:
 
----
-
-## Current Research Directions
-
-* Operational foundations
-* Behavioural equivalence and quotient structures
-* Emergent geometry
-* Principle of Equivalent Action
-* Category-theoretic reconstruction
-* Canonical mathematical structures
-* Cosmological reconstruction
-
----
-
-## Repository Structure
-
-```text
-Monograph/
-    Unified Mechanics Monograph
-
-Appendices/
-    Supporting mathematical developments
-
-Proofs/
-    Formal derivations
-
-Notes/
-    Research notes and ongoing work
-```
-
----
+1. The main monograph
+2. The compact monograph
+3. Universopedia
+4. The Realisation and Self-Description Principle
+5. Supporting appendices, tests, and research notes
 
 ## Feedback
 
-The most valuable feedback is **mathematical**.
+The most useful feedback concerns:
 
-In particular, I'm interested in:
+- mathematical gaps,
+- hidden assumptions,
+- unclear definitions,
+- circular reasoning,
+- conflicts with established results,
+- related mathematical work,
+- and ways to make the framework more precise.
 
-* structural gaps,
-* hidden assumptions,
-* circular definitions,
-* existing theorems that overlap with or contradict the programme,
-* references to related work,
-* alternative formulations that simplify or strengthen the mathematics.
+This repository is intended to make the programme inspectable, testable, and open to correction.
+"""
 
-The goal of this repository is not simply to propose new ideas, but to determine whether this reconstruction programme can be made mathematically rigorous.
+path = Path("/mnt/data/README.md")
+path.write_text(readme, encoding="utf-8")
+print(path)
