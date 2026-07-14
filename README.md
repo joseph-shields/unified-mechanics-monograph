@@ -1,7 +1,3 @@
-from pathlib import Path
-
-readme = """# Unified Mechanics
-
 Unified Mechanics is an independent research programme exploring whether many familiar structures in mathematics and physics can be understood through one shared systems-level framework.
 
 The project distinguishes between:
