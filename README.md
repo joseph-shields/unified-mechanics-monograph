@@ -60,7 +60,3 @@ The most useful feedback concerns:
 
 This repository is intended to make the programme inspectable, testable, and open to correction.
 """
-
-path = Path("/mnt/data/README.md")
-path.write_text(readme, encoding="utf-8")
-print(path)
