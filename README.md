@@ -1,6 +1,8 @@
 # Unified Mechanics
 ### The Corpus · 2026 · Third Printing
 
+https://notebook.google.com/notebook/fb15b72e-8ac8-4de8-af07-c7ae1e9da52a
+
 **How a sentence, asked to describe itself, becomes a universe.**
 
 One idea, told twice. A monograph unfolds it as a story. A companion standard holds it to the record.
