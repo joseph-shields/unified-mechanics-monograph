@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-27T15:15:06",
+  "generated": "2026-07-28T02:43:34",
   "tests": {
     "T10": "decayed part must host a closed triangular history",
     "T25": "decayed part must be irreducible, one operator"

@@ -1,19 +1,20 @@
 {
-  "generated": "2026-07-27T15:15:02",
+  "generated": "2026-07-28T02:48:02",
   "python": "3.12.10",
   "inputs": {
-    "nodes.csv": "206dbaa62bf493378790f3faaef080e81947146d3ec7c643de535deb08f1fa8c",
-    "dependencies.csv": "565a2e16c5420295275407ce09ad191b3d3c70db72360d8b045d54891c8024d4"
+    "nodes.csv": "7eb191e7322a1fdfa573bee0fb5ef5d7d99592f8deadefed0c28c27fb16b67fd",
+    "dependencies.csv": "6e68c836c08ecd347ea945aa78f8a3aefa8bff130371e273ba1e3327b61f14ef"
   },
-  "nodes": 64,
+  "nodes": 71,
   "nodes_by_type": {
     "axiom": 6,
     "definition": 18,
+    "discharged": 4,
     "numerical": 1,
-    "obligation": 7,
-    "result": 32
+    "obligation": 3,
+    "result": 39
   },
-  "dependency_edges": 67,
+  "dependency_edges": 82,
   "excluded_edges": [
     {
       "from": "T18",
@@ -79,14 +80,15 @@
     "T1",
     "T11",
     "T12",
-    "T13",
     "T18",
     "T22",
     "T23",
-    "T24",
     "T28",
-    "T31",
-    "T32",
+    "T35",
+    "T36",
+    "T37",
+    "T38",
+    "T39",
     "T7"
   ],
   "load_bearing_commitments": [
@@ -117,19 +119,10 @@
     "D6",
     "D8"
   ],
-  "longest_chain_length": 7,
-  "longest_chain_from": "T7",
+  "longest_chain_length": 8,
+  "longest_chain_from": "T38",
   "results_standing_on_an_open_obligation": {},
   "what_rests_on_each_obligation": {
-    "O1": [
-      "O2",
-      "O3"
-    ],
-    "O2": [],
-    "O3": [],
-    "O4": [
-      "N_lambda"
-    ],
     "O5": [],
     "O6": [],
     "O7": []

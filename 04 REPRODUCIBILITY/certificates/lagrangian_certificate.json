@@ -1,0 +1,20 @@
+{
+  "generated": "2026-07-28T02:43:47",
+  "weights": {
+    "W_L": 0.4774575140626314,
+    "W_B": 0.42705098312484224,
+    "W_M": 0.09549150281252627
+  },
+  "lambda_from_cross_term": 1.3416407864998738,
+  "lambda_from_quartic_term": 1.3416407864998738,
+  "overdetermined_and_consistent": true,
+  "lambda_carrier_closed_form": "3r/u = 3/sqrt(5)",
+  "lambda_carrier": 1.3416407864998738,
+  "lambda_planck_units_from_r240": 2.860333136142565e-122,
+  "ell_over_planck_length": 6.848726411168675e+60,
+  "ell_metres": 1.1069288305683427e+26,
+  "de_sitter_radius_m": 1.6552446776890024e+26,
+  "hubble_radius_m": 1.3733118568153092e+26,
+  "ell_over_R_dS": 0.668740304976422,
+  "predicted_ratio_5_to_the_minus_quarter": 0.668740304976422
+}

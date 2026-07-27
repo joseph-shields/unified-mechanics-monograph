@@ -1,6 +1,6 @@
 {
   "command": "python run_all.py",
-  "generated": "2026-07-27T15:15:19",
+  "generated": "2026-07-28T02:47:00",
   "python": "3.12.10",
   "platform": "Windows-11-10.0.26200-SP0",
   "packages": {
@@ -24,7 +24,7 @@
       "purpose": "the dependency graph, acyclicity, and what rests on each obligation",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.09,
+      "seconds": 0.08,
       "script_sha256": "0cfa96a754e4b3ec2f4ab7f0cded006c4d7114f1aeb76e2017508b71975a7ff5",
       "stdout_tail": [
         "stated but unused (9): A1, A2, A4, D12, D2, D3, D5, D6, D8",
@@ -47,7 +47,7 @@
       "purpose": "derivation distance from phi^2 = phi + 1",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.07,
+      "seconds": 0.06,
       "script_sha256": "df0eac9925f5111287e7d97512db23ed1e530380f3dd7673253c4498535afec0",
       "stdout_tail": [
         "            \"Two channels squared give four combinations\"",
@@ -70,7 +70,7 @@
       "purpose": "O4: explicit complete carrier closure through all 240 roots",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "script_sha256": "a42554de63a97b6bfaa50d07222209721fb3dbe5bc6e6081915e22462f9cdc77",
       "stdout_tail": [
         "roots: 240, all of norm two",
@@ -89,7 +89,7 @@
       "purpose": "O2: exhaustive rank-3 subsystems of E8 and their complements",
       "status": "ok",
       "returncode": 0,
-      "seconds": 3.67,
+      "seconds": 3.84,
       "script_sha256": "dc5869e177a9dab70bb7a51d646a5a2182eb1efb1acbbbbb232887df9a876fd8",
       "stdout_tail": [
         "(enumerated over all 2667 distinct rank-3 spans through one fixed root)",
@@ -112,7 +112,7 @@
       "purpose": "O2: elimination of candidates by T10 and T25",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.54,
+      "seconds": 0.51,
       "script_sha256": "73736a6c4a11822d323bca3203041347e3a258e70815bf8f649efab2be394f4f",
       "stdout_tail": [
         "candidate  comps  irred  triangle   survivor               verdict",
@@ -132,7 +132,7 @@
       "purpose": "O1 and O3: the reduction, the gauge algebra, the matter modules",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.28,
+      "seconds": 0.26,
       "script_sha256": "7645108cc83979cc64cdd50446c39dc0ee9882363f91e8fd535f20d9e44c94bf",
       "stdout_tail": [
         "  fixed subspace dimension: 5     decayed: 3",
@@ -155,7 +155,7 @@
       "purpose": "O3: the family count from the decay's own Weyl group",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.29,
+      "seconds": 0.27,
       "script_sha256": "1d42b9f1cd2086f4f74321bf80eb056b1452ee7dd426527b2e9187cd7e303a07",
       "stdout_tail": [
         "orbit 1: size 4",
@@ -178,7 +178,7 @@
       "purpose": "T12: the golden ring pairing in the Coxeter plane",
       "status": "ok",
       "returncode": 0,
-      "seconds": 1.23,
+      "seconds": 1.27,
       "script_sha256": "ffd4473a86f46215eaea8d39a6af42c230f5134f3020d88d7758708d6e3e3b48",
       "stdout_tail": [
         "TEST 1 \u2014 golden ring pairing",
@@ -200,7 +200,7 @@
       "purpose": "candidate interface coefficients against SPARC",
       "status": "ok",
       "returncode": 0,
-      "seconds": 1.07,
+      "seconds": 1.06,
       "script_sha256": "3a39bda091f84e1a8ae414d6a8556e9644e67588ab23243e8f1f1be67ba2b63b",
       "stdout_tail": [
         "n = 2696;  a* = cH0dB = 6.4545e-11",
@@ -218,7 +218,7 @@
       "purpose": "the interface closure against the radial acceleration relation",
       "status": "ok",
       "returncode": 0,
-      "seconds": 2.33,
+      "seconds": 1.93,
       "script_sha256": "2961bc228b7436ae2d383b0f42415cc9358ffe24cdd01dfd9992a08e86fcb514",
       "stdout_tail": [
         "  },",
@@ -241,7 +241,7 @@
       "purpose": "negative screen: neuronal avalanche",
       "status": "ok",
       "returncode": 0,
-      "seconds": 6.32,
+      "seconds": 7.28,
       "script_sha256": "a933c35f56989d483dbd80c43e0f0ac1d08ef00b5b7ef9010e52de221cddc5b8",
       "stdout_tail": [
         "sigma=0.948  x=0.994  chi=1.006  target sqrt5=2.236  ceiling r^3=0.0295",
@@ -254,7 +254,7 @@
       "purpose": "negative screen: subgranular zone balanced turnover",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.05,
+      "seconds": 0.04,
       "script_sha256": "05a1fa01beaab9c9cbca27f587263ba4c97c6e09df8f3a42849da63087475945",
       "stdout_tail": [
         "r=0.3090  band=[0.280,0.339]  predicted committed:mitotic=sqrt5=2.236",
@@ -269,7 +269,7 @@
       "purpose": "cortical neurogenesis accumulating-history extraction",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.23,
+      "seconds": 0.21,
       "script_sha256": "8e9c90317572e11a7f57a7efdee610069fe61bbfe2fa5b481cc658741726a5b3",
       "stdout_tail": [
         "x=r at E15.42; chi=sqrt5 at E14.68; separation 0.74 days",
@@ -283,7 +283,7 @@
       "purpose": "O5 and O6: the vacuum readout and the Hubble stake",
       "status": "ok",
       "returncode": 0,
-      "seconds": 0.88,
+      "seconds": 0.87,
       "script_sha256": "2fe43006e33c0780466e9124f9a411fa879e6167664e243e15cf38bbd3577aca",
       "stdout_tail": [
         "       Planck 2018 TT,TE,EE         Omega_L = 0.6884 (measured 0.6847 +- 0.0073),  H0.t0 = 0.9539,  t0 = 13.846 Gyr",
@@ -300,23 +300,201 @@
         "     pull = +0.55 sigma      (the corpus states 'about half a standard deviation')"
       ],
       "stderr_tail": []
+    },
+    {
+      "script": "lagrangian.py",
+      "purpose": "T24 as a variational principle: the overdetermined MacDowell-Mansouri match",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.07,
+      "script_sha256": "262f453f2a1bdec4e13a57ef686152d863318be6f1137f0ec8ea2f6477de5c7c",
+      "stdout_tail": [
+        "",
+        "   together they fix the carrier-to-physical length:",
+        "      ell / l_P = 6.848726e+60",
+        "      ell       = 1.106929e+26 m   = 11.700 billion light years",
+        "",
+        "   de Sitter radius sqrt(3/Lambda) = 1.655245e+26 m",
+        "   Hubble radius c/H0              = 1.373312e+26 m",
+        "   ell / R_dS = 0.668740305      predicted 5^(-1/4) = 0.668740305",
+        "   ell / R_H  = 0.806029",
+        "",
+        "   The carrier length lands at the cosmological horizon scale. A priori it could",
+        "   have landed anywhere across hundreds of orders of magnitude."
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "o1_closure.py",
+      "purpose": "O1 reduced to one lattice condition",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 43.8,
+      "script_sha256": "5f579eb8516bf40e0b5fc8fd7d797f3be3d5c3254d2efae8839b06684a1314ee",
+      "stdout_tail": [
+        "",
+        "Step 4 and 5, on the A3 that Paper 21 forced:",
+        "   |W(A3)| = 24",
+        "   W(A3) fixes the orthogonal complement pointwise : True",
+        "   the average over W(A3) IS the projector onto it : True",
+        "   decayed subspace is spanned by its own roots    : True",
+        "",
+        "O1 chain verified where it is checkable: True",
+        "Steps 1 and 6 are standard results, cited rather than recomputed:",
+        "   Tomiyama, on norm-one projections being conditional expectations;",
+        "   uniqueness of the covariant conditional expectation onto a finite-group",
+        "   fixed algebra, which is the group average."
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "hydrogen_closure.py",
+      "purpose": "hydrogen: n^2 degeneracy and -1/n^2 from the carrier via Perelman and Fock",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.07,
+      "script_sha256": "0912c56668d2bb97d73ad788e4c458ed88a6295fb788fe7283c1b69bf400305e",
+      "stdout_tail": [
+        "  n    E_n / E_1     observed",
+        "  1   1.00000000   1.00000000",
+        "  2   0.25000000   0.25000000",
+        "  3   0.11111111   0.11111111",
+        "  4   0.06250000   0.06250000",
+        "  5   0.04000000   0.04000000",
+        "  6   0.02777778   0.02777778",
+        "",
+        "Balmer, checked as a ratio so that no coupling enters:",
+        "   H-alpha  1/2^2 - 1/3^2 = 0.13888889   wavelength ratio to H-alpha = 1.000000",
+        "   H-beta   1/2^2 - 1/4^2 = 0.18750000   wavelength ratio to H-alpha = 0.740741",
+        "   H-gamma  1/2^2 - 1/5^2 = 0.21000000   wavelength ratio to H-alpha = 0.661376"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "o6_dark_energy_audit.py",
+      "purpose": "O6 extended: the deed audit applied to the dark-energy comparison",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.07,
+      "script_sha256": "bb46441d14830b1260d43dbbc014a6a8a6f8e320a35649acae37258796cca349",
+      "stdout_tail": [
+        "   spread across SN pipelines at fixed data: 1.4 sigma",
+        "",
+        "   The three-deed fits differ from one another by more than one and a half sigma",
+        "   while using the same BAO and the same CMB. Only the supernova pipeline changed.",
+        "   A physically evolving w cannot care which photon pipeline is attached to it.",
+        "   A deed-price difference must.",
+        "",
+        "VERDICT, stated as a test rather than a result:",
+        "   Consistent with the framework's reading. NOT confirmation: the mapping from a",
+        "   priced deed difference onto w0 and wa is not derived here and remains OPEN.",
+        "   The framework dies if a single-deed pipeline alone returns w != -1 at high",
+        "   significance, since no combination artifact would then be available."
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "matter_action.py",
+      "purpose": "Paper 25: the matter action, hypercharge, one generation, sin2 theta_W, CP",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.08,
+      "script_sha256": "028fda22797803e1d702eed1d8331d3dba6b4edc686201dadf3fd824e97a526d",
+      "stdout_tail": [
+        "sector       block                      F^F term           observed",
+        "strong       3 reversible modes         no orientation to couple theta < 1e-10",
+        "weak         clock + closure, on arrow  orientation available CP violated",
+        "EM           traceless across both      no net orientation CP conserved",
+        "gravity      the metric block 4 + 1     no net orientation CP conserved",
+        "",
+        "   The u^2 term is F^F, which for a gauge sector is the topological theta term.",
+        "   Its coefficient is universal, so the framework cannot make theta small by",
+        "   tuning. It makes it ZERO in the strong sector, because a term whose entire",
+        "   content is orientation sensitivity has nothing to be sensitive with when its",
+        "   block is freely reversible. The same reading requires CP violation in the",
+        "   weak sector, which lives on the arrow. Two for two, no freedom used."
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "forcing_the_rest.py",
+      "purpose": "Paper 26: O1 closed, the hierarchy, anomalies, family degeneracy",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 147.74,
+      "script_sha256": "33459f36b295f5663a1768fa544d53c99aa99bd63ee229489db787412abb867f",
+      "stdout_tail": [
+        "   Not cited. Summed over the sixteen states the 3+2 split actually produced.",
+        "",
+        "PART FOUR   What the construction says about family masses",
+        "   T25 makes mass the failure to commute with the decay. Every root in the",
+        "   spinor sector has the same projection onto the decayed block, so at this",
+        "   level of the construction every family carries the same failure.",
+        "   distinct projections across the 128 spinor-sector roots: [0.75]",
+        "",
+        "   => the three families are DEGENERATE at this order. The hierarchy is not",
+        "      derived and is not hidden: it must come from the Yukawa structure, which",
+        "      this construction does not reach. Stated as an exposure, since a framework",
+        "      that predicted degenerate families and stopped there would be wrong."
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "chirality.py",
+      "purpose": "Paper 22: reversal exchanges the spinor orientations; no SL(2,C) present",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.33,
+      "script_sha256": "acb820ca5aaeee0cd1b6c80ae6c27b91e43d9d41b62827d394631550d1290c07",
+      "stdout_tail": [
+        "CHECK 3  a cycle composed with its reverse has zero net displacement",
+        "           True   (this is the configuration a Dirac mass needs)",
+        "CHECK 4  the Distler-Garibaldi configuration is not instantiated",
+        "           decay group finite, order 24: True",
+        "           it fixes the geometry block pointwise, dim 5: True",
+        "           therefore no connected SL(2,C) whose centralizer is the gauge group",
+        "",
+        "The two partitions of the surviving five, on two different criteria:",
+        "   4 + 1   metric criterion (D18): what enters P_X - P_T",
+        "   3 + 2   reversibility criterion (T15, D18): freely traversable",
+        "",
+        "spinor-sector roots 128, vector-sector roots 60"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "design_strength.py",
+      "purpose": "Paper 23: spherical design strengths giving the hydrogen cutoffs",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.4,
+      "script_sha256": "fb12b64073c8f88488f8fd9fb58ac6c61b7b5fa61c1a4867ede5e66dd02cda5b",
+      "stdout_tail": [
+        "24-cell:  24 points, spherical  5-design  ->  N <= 2  ->  hydrogen n <= 3, fails at n = 4",
+        " 600-cell: 120 points, spherical 11-design  ->  N <= 5  ->  hydrogen n <= 6, fails at n = 7",
+        "",
+        "These are exactly the cutoffs reported in the hydrogen monograph."
+      ],
+      "stderr_tail": []
     }
   ],
   "outputs_written_or_changed": {
-    "results": [
-      "results/sparc_results.json"
-    ],
-    "figures": [
-      "figures/sparc_rar.png"
-    ],
+    "results": [],
+    "figures": [],
     "certificates": [
       "certificates/families_certificate.json",
+      "certificates/forcing_certificate.json",
       "certificates/graph_certificate.json",
+      "certificates/hydrogen_certificate.json",
+      "certificates/lagrangian_certificate.json",
+      "certificates/matter_action_certificate.json",
+      "certificates/o1_closure_certificate.json",
       "certificates/o1_o3_certificate.json",
       "certificates/o2_certificate.json",
       "certificates/o2_elimination_certificate.json",
       "certificates/o4_certificate.json",
-      "certificates/o5_o6_certificate.json"
+      "certificates/o5_o6_certificate.json",
+      "certificates/o6_dark_energy_certificate.json"
     ]
   },
   "all_passed": true,

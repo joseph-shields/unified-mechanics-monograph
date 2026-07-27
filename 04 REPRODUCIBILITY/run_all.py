@@ -32,6 +32,14 @@ STEPS = [
     ("sgz_balanced_turnover_test.py","negative screen: subgranular zone balanced turnover"),
     ("dev_neurogenesis_test.py",     "cortical neurogenesis accumulating-history extraction"),
     ("o5_o6_cosmology.py",           "O5 and O6: the vacuum readout and the Hubble stake"),
+    ("lagrangian.py",                "T24 as a variational principle: the overdetermined MacDowell-Mansouri match"),
+    ("o1_closure.py",                "O1 reduced to one lattice condition"),
+    ("hydrogen_closure.py",          "hydrogen: n^2 degeneracy and -1/n^2 from the carrier via Perelman and Fock"),
+    ("o6_dark_energy_audit.py",      "O6 extended: the deed audit applied to the dark-energy comparison"),
+    ("matter_action.py",             "Paper 25: the matter action, hypercharge, one generation, sin2 theta_W, CP"),
+    ("forcing_the_rest.py",          "Paper 26: O1 closed, the hierarchy, anomalies, family degeneracy"),
+    ("chirality.py",                 "Paper 22: reversal exchanges the spinor orientations; no SL(2,C) present"),
+    ("design_strength.py",           "Paper 23: spherical design strengths giving the hydrogen cutoffs"),
 ]
 
 def sha(p):

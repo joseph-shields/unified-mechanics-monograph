@@ -1,0 +1,21 @@
+{
+  "generated": "2026-07-27T23:22:04",
+  "negation_preserves_spinor_sector": true,
+  "negation_exchanges_family_orbits": true,
+  "negation_reverses_D5_spinor_weight": true,
+  "reverse_cycle_writes_nothing": true,
+  "decay_group_order": 24,
+  "decay_fixes_block_pointwise_dim": 5,
+  "DG_ToE1_instantiated": false,
+  "DG_reason": "no connected SL(2,C) subgroup; the decay group is finite of order 24 and the gauge algebra is the centralizer of that finite group, not of an SL(2,C)",
+  "partitions_of_the_surviving_five": {
+    "metric criterion (D18): what enters P_X - P_T": [
+      4,
+      1
+    ],
+    "reversibility criterion (T15, D18): freely traversable": [
+      3,
+      2
+    ]
+  }
+}

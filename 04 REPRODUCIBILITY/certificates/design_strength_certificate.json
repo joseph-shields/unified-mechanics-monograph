@@ -1,0 +1,16 @@
+{
+  "24-cell": {
+    "points": 24,
+    "design_strength_t": 5,
+    "max_harmonic_degree_N": 2,
+    "hydrogen_n_max": 3,
+    "first_failure_at_n": 4
+  },
+  "600-cell": {
+    "points": 120,
+    "design_strength_t": 11,
+    "max_harmonic_degree_N": 5,
+    "hydrogen_n_max": 6,
+    "first_failure_at_n": 7
+  }
+}

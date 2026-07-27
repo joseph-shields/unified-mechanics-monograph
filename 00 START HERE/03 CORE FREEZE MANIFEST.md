@@ -1,5 +1,5 @@
 # Core Freeze Manifest
-### Corpus Edition 2026, Fifth Printing · 27 July 2026
+### Corpus Edition 2026, Fifth Printing · 28 July 2026
 
 This manifest governs which objects constitute the printing. Where this file and any
 other document disagree, this file governs.
@@ -8,18 +8,18 @@ other document disagree, this file governs.
 
 | file | what it carries | sha256 (first 16) |
 |---|---|---|
-| `00 The Corpus Atlas.pdf` | the map. Read first. | `bcbe3869d52312e5` |
-| `A — A World of Distinctions.pdf` | the argument, 27 movements | `1947562888d1aabc` |
+| `00 The Corpus Atlas.pdf` | the map. Read first. | `2829e4d73f0448ea` |
+| `A — A World of Distinctions.pdf` | the argument, 27 movements | `9889d4e736fd3785` |
 | `B1 — Universopedia, The Observational Standard.pdf` | the observational contract | `6b87313041c25f34` |
 | `B2 — Universopedia, Systems of Interpretation.pdf` | the casebook, misses included | `6af28c33316b2fee` |
-| `C — Unified Mechanics, The Formal Register.pdf` | the audit surface | `69f81ae51c847d2a` |
+| `C — Unified Mechanics, The Formal Register.pdf` | the audit surface | `b5f8c8ef1d1adc61` |
 | `00 The Papers Index.pdf` | numbering, status, what supersedes what | `7b8268fd0686707d` |
 | `20 The Forward Closure.pdf` | carrier, descent, one operator | `9c24c95a4ed78642` |
 | `21 The Rank-Three Decay.pdf` | T29 to T32, new this printing | `11dc724074c96183` |
-| `run_manifest.json` | proof that every number regenerates | `a236f2f1687db593` |
-| `graph_certificate.json` | acyclicity and the obligation structure | `850342cfebde70f0` |
+| `run_manifest.json` | proof that every number regenerates | `2fe982714a87bd55` |
+| `graph_certificate.json` | acyclicity and the obligation structure | `d3c331c0959bd5b8` |
 
-Full hashes for all 104 active files are in `04 SHA256SUMS.txt`. Verify with:
+Full hashes for all 132 active files are in `04 SHA256SUMS.txt`. Verify with:
 
 ```bash
 sha256sum -c "00 START HERE/04 SHA256SUMS.txt"
@@ -34,8 +34,8 @@ The Edition Note lists all of them with the evidence.
 
 ## Graph certificate
 
-64 nodes, 67 dependency edges, acyclic: True.
-Longest chain: 7 steps. No result T1 to T32 depends on any open
+71 nodes, 82 dependency edges, acyclic: True.
+Longest chain: 8 steps. No result T1 to T32 depends on any open
 obligation, so the obligations are terminal and the argument is closed. Regenerate with
 `python run_all.py` from `04 REPRODUCIBILITY`.
 

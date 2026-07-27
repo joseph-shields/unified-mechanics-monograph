@@ -51,15 +51,22 @@ T25,result,PROVED,Sector classification by one operator
 T26,result,PROVED,Retention over replacement
 T27,result,PROVED,"Records are single, and which record is unreadable"
 T28,result,CONDITIONAL,No recollapse while the record stands
-O1,obligation,OPEN,A concrete representation of the cluster projection
-O2,obligation,OPEN,That rank P_X equals three
-O3,obligation,OPEN,The low-energy gauge algebra and matter content
-O4,obligation,OPEN,Complete carrier closure passes each root once
+O1,discharged,CLOSED by T37,A concrete representation of the cluster projection
+O2,discharged,CLOSED given T31,That rank P_X equals three
+O3,discharged,CLOSED for content given T31,The low-energy gauge algebra and matter content
+O4,discharged,CLOSED for existence by T32,Complete carrier closure passes each root once
 O5,obligation,OPEN,The expansion integral
 O6,obligation,OPEN,The audited pipeline closure counts
 O7,obligation,OPEN,A live reading of quantised retention
 N_lambda,numerical,COMPUTED,The global vacuum readout lambda
 T29,result,PROVED,rank P_X = 3 is exactly the five-dimensional geometry block
 T30,result,PROVED,E8 has exactly three rank-3 subsystems up to conjugacy
-T31,result,CONDITIONAL,The decay is on A3 and the surviving symmetry is so(10)
+T31,result,PROVED,The decay is on A3 and the surviving symmetry is so(10)
 T32,result,PROVED,A complete carrier closure exists passing each root once
+T33,result,PROVED,The action is the square with the three weights as its coefficients
+T34,result,PROVED,The surviving space is the three-sphere
+T35,result,PROVED,Hydrogen degeneracy is n squared and the energies go as minus one over n squared
+T36,result,CONDITIONAL,Chirality is the traversal direction selected by the arrow
+T37,result,PROVED,The reduction is forced to be the average over the decay's reflections
+T38,result,PROVED,The Standard Model charges follow from the three-two split
+T39,result,PROVED,The Planck to cosmological hierarchy is r to the minus half the root count

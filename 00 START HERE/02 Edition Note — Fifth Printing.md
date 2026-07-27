@@ -1,5 +1,5 @@
 # Edition Note
-### Corpus Edition 2026, Fifth Printing · 27 July 2026
+### Corpus Edition 2026, Fifth Printing · 27–28 July 2026
 
 The Fourth Printing closed the argument. This printing does two things: it attacks the proof obligations that argument left standing, and it repairs the edition so that the completion is visible rather than something a reader has to reconstruct.
 
@@ -45,3 +45,44 @@ Papers are preserved as issued. Corrections belong in new printings and in the P
 ## What was recommended and not done
 
 A whole-corpus renaming to prefixed identifiers (UM-T24 and similar) was considered and rejected: it would churn cross-references in nine issued papers to solve an ambiguity that does not exist, since no other numbering in the corpus uses those forms. Tagged and accessible PDF output, and re-export of the Semantic Word System from source, remain outstanding and are recorded here rather than quietly dropped.
+
+
+---
+
+# Addendum · Papers 22 to 26
+
+Issued after the Fifth Printing was assembled. The Monograph's closing ledger, the
+Formal Register and the Atlas were rebuilt to absorb them; the Universopedia volumes,
+Papers 04 to 21, and the Companion works are untouched.
+
+## What was forced
+
+| | |
+|---|---|
+| **22 · Chirality from the Arrow** | The Distler–Garibaldi no-go does not reach this construction: its first hypothesis needs an SL(2,C) subgroup of E8 with the gauge group as centraliser, and the decay group here is finite of order 24. Chirality then comes from the arrow, and the mass term that would make the spectrum vector-like composes a cycle with its own reverse — the overwrite T26 has forbidden since the wound movements. |
+| **23 · The Design Strength of the Carrier** | The hydrogen sampling cutoffs are the spherical design strengths of the 24-cell (5) and 600-cell (11), with N ≤ ⌊t/2⌋. Both cutoffs exactly. Predicted beats observed. |
+| **24 · What It Now Claims, and What Would End It** | The capstone. Opens with four kill conditions. Contains the variational principle (T24 **is** MacDowell–Mansouri, overdetermined, Λ = 3/√5 exactly) and hydrogen's form from Perelman plus self-duality plus Fock. |
+| **25 · The Matter Action** | The same square on the full carrier. The three weights are T25's three sectors. All sixteen Standard Model charges from a 3+2 split; sin²θ_W = 3/8. The projection MacDowell–Mansouri inserts by hand is the cluster projection. |
+| **26 · Forcing the Rest** | Field equations by variation. **O1 closed** — T13 requires an algebra, and no rootless subspace can supply a rank-five gauge algebra. The hierarchy in closed form as r^−120. Anomalies by summation. θ_strong = 0 derived. |
+
+## The ledger now
+
+Four obligations **discharged** (O1, O2, O3 for content, O4 for existence). Three standing:
+the expansion residual, the pipeline audit, and the live reading of quantised retention.
+
+Graph: **71 nodes, 82 dependency edges, acyclic, longest chain 8 steps.** Harness 22/22.
+Release gate 9/9.
+
+## The exposure
+
+At this order the three families are **degenerate**. Every root in the matter sector
+returns the same failure-to-commute, so the construction says nothing about why the
+electron and the top quark differ by five orders of magnitude. Three families is a real
+result; three degenerate families is a wrong prediction until the Yukawa structure is
+supplied. It is recorded in the Monograph, the Register and Paper 26 at the same volume
+as the successes.
+
+## What is owed
+
+One coupling, in three costumes. One Yukawa hierarchy. One closure count, finite and
+needed by nothing. And two measurements that do not close at a desk.

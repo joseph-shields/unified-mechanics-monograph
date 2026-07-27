@@ -1,0 +1,14 @@
+{
+  "generated": "2026-07-28T02:44:31",
+  "rank3_spans_examined": 2667,
+  "all_spans_are_root_subsystems": true,
+  "failures": [],
+  "W_A3_order": 24,
+  "W_fixes_orthogonal_complement_pointwise": true,
+  "group_average_equals_projector_onto_complement": true,
+  "chain_verified_where_checkable": true,
+  "cited_steps": [
+    "Tomiyama: norm-one projection onto a subalgebra is a conditional expectation",
+    "uniqueness of the covariant conditional expectation onto a finite-group fixed algebra"
+  ]
+}
