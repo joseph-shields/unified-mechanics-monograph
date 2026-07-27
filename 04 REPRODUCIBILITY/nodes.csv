@@ -1,0 +1,65 @@
+id,type,grade,title
+A1,axiom,AXIOM,Systemhood
+A2,axiom,POSTULATE,The ground
+A3,axiom,POSTULATE,The two-sided reading
+A4,axiom,POSTULATE,Saturation
+A5,axiom,POSTULATE,Conservation of the readout
+A6,axiom,DEFINITION,Admissible reduction
+D1,definition,,Distinction
+D2,definition,,Identity
+D3,definition,,Relation
+D4,definition,,The seven doings
+D5,definition,,Traversal stages
+D6,definition,,Object
+D7,definition,,The update
+D8,definition,,Channels
+D9,definition,,The three weights
+D10,definition,,Crossing
+D11,definition,,Record
+D12,definition,,Observer
+D13,definition,,Carrier
+D14,definition,,Primitive crossing
+D15,definition,,Cluster projection
+D16,definition,,Decay generator
+D17,definition,,Readable algebra
+D18,definition,,Geometry projectors
+T1,result,PROVED,The seven doings admit a unique linear order
+T2,result,PROVED,The minimal update is unique
+T3,result,PROVED,The stable ratio is the golden fixed point
+T4,result,PROVED,The retained fraction is 1/(2 phi)
+T5,result,PROVED,The three weights exhaust the whole
+T6,result,PROVED,The quantised crossing
+T7,result,PROVED,The traversal price in closed form
+T8,result,CONDITIONAL,The carrier is E8
+T9,result,PROVED,Evenness descends from the two-sided reading
+T10,result,PROVED,The minimal closed carrier history is triangular
+T11,result,PROVED,The root cell area is root three
+T12,result,PROVED,The golden ring pairing
+T13,result,PROVED,The physical algebra is the kernel of the decay
+T14,result,PROVED,Minimal and general decay generators are distinct
+T15,result,PROVED,The local clock mode is single
+T16,result,PROVED,The closure mode is single
+T17,result,CONDITIONAL,The inherited form is Lorentzian
+T18,result,PROVED,Second witness for T17
+T19,result,PROVED,Superposition is forced
+T20,result,PROVED,Complex phase is forced
+T21,result,PROVED,The Born pricing is forced
+T22,result,PROVED,Closed carriage is unitary
+T23,result,PROVED,The boundary weight is the interference term
+T24,result,PROVED,The three weights structure the gravitational account
+T25,result,PROVED,Sector classification by one operator
+T26,result,PROVED,Retention over replacement
+T27,result,PROVED,"Records are single, and which record is unreadable"
+T28,result,CONDITIONAL,No recollapse while the record stands
+O1,obligation,OPEN,A concrete representation of the cluster projection
+O2,obligation,OPEN,That rank P_X equals three
+O3,obligation,OPEN,The low-energy gauge algebra and matter content
+O4,obligation,OPEN,Complete carrier closure passes each root once
+O5,obligation,OPEN,The expansion integral
+O6,obligation,OPEN,The audited pipeline closure counts
+O7,obligation,OPEN,A live reading of quantised retention
+N_lambda,numerical,COMPUTED,The global vacuum readout lambda
+T29,result,PROVED,rank P_X = 3 is exactly the five-dimensional geometry block
+T30,result,PROVED,E8 has exactly three rank-3 subsystems up to conjugacy
+T31,result,CONDITIONAL,The decay is on A3 and the surviving symmetry is so(10)
+T32,result,PROVED,A complete carrier closure exists passing each root once

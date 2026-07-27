@@ -1,0 +1,137 @@
+{
+  "generated": "2026-07-27T15:15:02",
+  "python": "3.12.10",
+  "inputs": {
+    "nodes.csv": "206dbaa62bf493378790f3faaef080e81947146d3ec7c643de535deb08f1fa8c",
+    "dependencies.csv": "565a2e16c5420295275407ce09ad191b3d3c70db72360d8b045d54891c8024d4"
+  },
+  "nodes": 64,
+  "nodes_by_type": {
+    "axiom": 6,
+    "definition": 18,
+    "numerical": 1,
+    "obligation": 7,
+    "result": 32
+  },
+  "dependency_edges": 67,
+  "excluded_edges": [
+    {
+      "from": "T18",
+      "to": "T17",
+      "kind": "witness"
+    },
+    {
+      "from": "D10",
+      "to": "T6",
+      "kind": "reference"
+    },
+    {
+      "from": "D16",
+      "to": "T14",
+      "kind": "reference"
+    }
+  ],
+  "acyclic": true,
+  "cycle": [],
+  "ungrounded_roots": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "D1",
+    "D11",
+    "D12",
+    "D13",
+    "D14",
+    "D15",
+    "D16",
+    "D17",
+    "D18",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D6",
+    "D7",
+    "D8",
+    "D9",
+    "O6",
+    "T18"
+  ],
+  "leaves": [
+    "A1",
+    "A2",
+    "A4",
+    "D12",
+    "D2",
+    "D3",
+    "D5",
+    "D6",
+    "D8",
+    "N_lambda",
+    "O2",
+    "O3",
+    "O5",
+    "O6",
+    "O7",
+    "T1",
+    "T11",
+    "T12",
+    "T13",
+    "T18",
+    "T22",
+    "T23",
+    "T24",
+    "T28",
+    "T31",
+    "T32",
+    "T7"
+  ],
+  "load_bearing_commitments": [
+    "A3",
+    "A5",
+    "A6",
+    "D1",
+    "D10",
+    "D11",
+    "D13",
+    "D14",
+    "D15",
+    "D16",
+    "D17",
+    "D18",
+    "D4",
+    "D7",
+    "D9"
+  ],
+  "stated_but_unused_commitments": [
+    "A1",
+    "A2",
+    "A4",
+    "D12",
+    "D2",
+    "D3",
+    "D5",
+    "D6",
+    "D8"
+  ],
+  "longest_chain_length": 7,
+  "longest_chain_from": "T7",
+  "results_standing_on_an_open_obligation": {},
+  "what_rests_on_each_obligation": {
+    "O1": [
+      "O2",
+      "O3"
+    ],
+    "O2": [],
+    "O3": [],
+    "O4": [
+      "N_lambda"
+    ],
+    "O5": [],
+    "O6": [],
+    "O7": []
+  }
+}

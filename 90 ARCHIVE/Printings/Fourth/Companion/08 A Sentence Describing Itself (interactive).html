@@ -1,0 +1,666 @@
+<title>A Sentence Describing Itself</title>
+
+<style>
+:root{
+  --ground:#FBF8F1; --raised:#F5F0E4; --ink:#1C2836; --head:#102A43;
+  --gold:#B48A2E; --muted:#6E7A88; --rule:#E0D6BF; --hair:#EDE6D5;
+  --glow:rgba(180,138,46,.16);
+  --serif:Constantia,"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --mono:Consolas,"SF Mono","Cascadia Mono",ui-monospace,"Roboto Mono",monospace;
+  --measure:63ch;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#080C14; --raised:#0C121C; --ink:#D8D3C7; --head:#CBD7E7;
+    --gold:#D4A84B; --muted:#77828F; --rule:#1C2836; --hair:#141C28;
+    --glow:rgba(212,168,75,.22);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#080C14; --raised:#0C121C; --ink:#D8D3C7; --head:#CBD7E7;
+  --gold:#D4A84B; --muted:#77828F; --rule:#1C2836; --hair:#141C28;
+  --glow:rgba(212,168,75,.22);
+}
+:root[data-theme="light"]{
+  --ground:#FBF8F1; --raised:#F5F0E4; --ink:#1C2836; --head:#102A43;
+  --gold:#B48A2E; --muted:#6E7A88; --rule:#E0D6BF; --hair:#EDE6D5;
+  --glow:rgba(180,138,46,.16);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--serif); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 28px}
+
+/* ---------- the record counter ---------- */
+#record{
+  position:fixed; top:0; right:0; z-index:50;
+  padding:10px 16px 11px; text-align:right;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.09em;
+  color:var(--muted); background:color-mix(in srgb,var(--ground) 86%,transparent);
+  backdrop-filter:blur(7px); border-left:1px solid var(--hair); border-bottom:1px solid var(--hair);
+}
+#record b{display:block; font-weight:400; font-size:19px; letter-spacing:.02em;
+  color:var(--gold); font-variant-numeric:tabular-nums; line-height:1.15}
+#record span{opacity:.72}
+
+/* ---------- hero ---------- */
+header{padding:23vh 0 15vh; position:relative}
+.kicker{font-family:var(--serif); font-size:11px; letter-spacing:.42em;
+  color:var(--gold); text-transform:uppercase; margin-bottom:2.4rem}
+h1{font-size:clamp(2.9rem,8.4vw,5.6rem); line-height:1.02; font-weight:700;
+  color:var(--head); margin:0 0 1.6rem; letter-spacing:-.022em; text-wrap:balance}
+.deck{font-size:clamp(1.05rem,2.3vw,1.35rem); font-style:italic; color:var(--muted);
+  max-width:34ch; line-height:1.5; margin:0 0 4.5rem;
+  padding-top:1.5rem; border-top:1px solid var(--rule)}
+.opening{max-width:var(--measure); font-size:1.14rem}
+.opening em{font-style:italic; color:var(--head)}
+
+/* ---------- movements ---------- */
+section{padding:9vh 0; border-top:1px solid var(--hair)}
+.mv{font-family:var(--mono); font-size:10.5px; letter-spacing:.3em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:.7rem}
+h2{font-size:clamp(1.85rem,4.2vw,2.7rem); font-weight:700; color:var(--head);
+  margin:0 0 2.2rem; letter-spacing:-.014em; line-height:1.12; text-wrap:balance;
+  padding-bottom:.7rem; border-bottom:1px solid var(--rule); max-width:20ch}
+p{max-width:var(--measure); margin:0 0 1.25rem}
+.lede{font-size:1.1rem}
+.note{font-size:.9rem; color:var(--muted); font-style:italic; max-width:58ch}
+
+/* ---------- figures ---------- */
+figure{margin:3rem 0; padding:0}
+.plate{
+  background:var(--raised); border:1px solid var(--hair);
+  padding:34px 30px 26px; position:relative; overflow:hidden;
+}
+canvas{display:block; width:100%; height:auto}
+figcaption{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.055em; color:var(--muted);
+  margin-top:1.15rem; padding-top:.85rem; border-top:1px solid var(--hair); max-width:70ch;
+}
+
+/* readout row */
+.readout{display:flex; flex-wrap:wrap; gap:2.4rem; margin-bottom:1.9rem}
+.rd{display:flex; flex-direction:column; gap:.25rem}
+.rd .k{font-family:var(--mono); font-size:9.5px; letter-spacing:.19em;
+  text-transform:uppercase; color:var(--muted)}
+.rd .v{font-family:var(--mono); font-size:clamp(1.3rem,3.4vw,1.9rem); color:var(--gold);
+  font-variant-numeric:tabular-nums; line-height:1}
+.rd .v.sm{font-size:1.05rem; color:var(--ink)}
+
+/* weights legend */
+.legend{display:flex; flex-wrap:wrap; gap:1.6rem; margin-top:1.3rem;
+  font-family:var(--mono); font-size:11px; color:var(--muted)}
+.legend i{display:inline-block; width:9px; height:9px; margin-right:.5rem;
+  vertical-align:baseline; font-style:normal}
+
+/* e8 controls */
+.pairs{display:flex; flex-wrap:wrap; gap:8px; margin-top:1.4rem}
+.pairs button{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.07em;
+  padding:7px 13px; cursor:pointer; color:var(--muted);
+  background:transparent; border:1px solid var(--rule); border-radius:0;
+  transition:color .18s,border-color .18s,background .18s;
+}
+.pairs button:hover{color:var(--gold); border-color:var(--gold)}
+.pairs button[aria-pressed="true"]{color:#121C28; background:var(--gold); border-color:var(--gold); font-weight:700}
+.pairs button:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+
+/* grade box */
+.grade{
+  border-left:2px solid var(--rule); padding:.15rem 0 .15rem 1.15rem;
+  margin:2rem 0; font-size:.88rem; font-style:italic; color:var(--muted); max-width:60ch;
+}
+.grade b{font-style:normal; font-weight:400; font-family:var(--mono);
+  font-size:10px; letter-spacing:.15em; color:var(--gold)}
+
+/* display line */
+.disp{text-align:center; font-weight:700; color:var(--head);
+  max-width:none; margin:2.4rem auto; font-size:1.06rem; text-wrap:balance}
+
+/* ---------- coda ---------- */
+.coda{text-align:center; padding:14vh 0 6vh; border-top:1px solid var(--rule)}
+.coda p{max-width:none; margin:0 auto .55rem; color:var(--head); font-size:1.16rem}
+.coda p.last{color:var(--gold); margin-top:1.9rem; font-style:italic}
+.seal{font-family:var(--mono); font-size:10px; letter-spacing:.34em;
+  text-transform:uppercase; color:var(--muted); margin-top:5rem;
+  padding-top:1.6rem; border-top:1px solid var(--hair); display:inline-block}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  header{padding:15vh 0 10vh}
+  .plate{padding:22px 16px 18px}
+  .readout{gap:1.5rem}
+  #record{padding:7px 11px 8px}
+  #record b{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important}
+}
+</style>
+
+<div id="record" aria-live="off">
+  <b id="rcount">0</b>
+  <span>distinctions drawn</span>
+</div>
+
+<div class="wrap">
+
+<header>
+  <div class="kicker">Unified Mechanics &middot; The Corpus &middot; 2026</div>
+  <h1>A Sentence<br>Describing Itself</h1>
+  <p class="deck">How a sentence, asked to describe itself, becomes a universe.</p>
+  <p class="opening">Consider a sentence. Not the idea of a sentence. <em>This one, here, presently doing its job.</em> It begins and it ends, which gives it an edge. It is built from words, which gives it parts. The words arrive in an order, so they resolve one after another. And it means something, though the meaning lives in none of the words alone.</p>
+  <p class="opening">Ask the sentence to do one small thing. Ask it to describe itself.</p>
+  <p class="opening note">Everything below unfolds from that request. Nothing on this page is illustrated: every figure is computed live, in your browser, from the framework's own rules.</p>
+</header>
+
+<section id="s1">
+  <div class="mv">Movement One</div>
+  <h2>The one move</h2>
+  <p class="lede">A system describing itself must hold two things at once: what it is presently working out, and what it keeps in reserve in order to carry on. One channel cannot manage this, because describing yourself with a single channel is writing over yourself. Two channels are needed, and one rule for how they move forward.</p>
+  <p class="disp">( resolved , held ) &nbsp;becomes&nbsp; ( resolved + held , resolved )</p>
+  <p>That is the whole seed. Let it run, and ask what proportion the system settles into. It is stable when repeating the step changes its overall size but leaves the ratio between its two channels alone: it keeps its shape while it grows.</p>
+
+  <figure>
+    <div class="plate">
+      <div class="readout">
+        <div class="rd"><span class="k">Step</span><span class="v sm" id="phiStep">0</span></div>
+        <div class="rd"><span class="k">Resolved &divide; Held</span><span class="v" id="phiVal">&mdash;</span></div>
+        <div class="rd"><span class="k">Settling toward</span><span class="v sm" id="phiTarget">1.6180339887</span></div>
+      </div>
+      <canvas id="cPhi" width="1000" height="290"></canvas>
+    </div>
+    <figcaption>The ratio of the two channels, iterated live. It is not converging on a number chosen in advance; it is the only proportion at which a two-channel system can hold its shape and go on describing itself indefinitely.</figcaption>
+  </figure>
+
+  <p>The golden ratio arrives unannounced and without having been invited. Written out, the requirement is a number whose square is merely itself plus one, &phi;&sup2; = &phi; + 1, and there is exactly one positive solution. The number the rest of the framework uses comes from one further step: a single act of self-description places its mixed relation in two directions, so the retained side is measured with a factor of two. Define <b>r = 1 / (2&phi;) = 0.309017</b>, and let u = 1 &minus; r be whatever is left.</p>
+  <div class="grade"><b>PROVED</b> &mdash; given three requirements on the update: that it add and never subtract, that it carry exactly one clean copy of each channel forward, and that the next reserve be the present resolved amount. No adjustable knob survives.</div>
+</section>
+
+<section id="s2">
+  <div class="mv">Movement Two</div>
+  <h2>The three weights</h2>
+  <p class="lede">Two channels, once allowed to meet, can meet in only so many ways, and the count is smaller than one might expect. Taken two at a time they offer four combinations on paper. But two of them are the same pair read in opposite order, and a system that does not care which way round its relations are read counts them once. Four collapses to three, and the three exhaust the whole.</p>
+
+  <figure>
+    <div class="plate">
+      <canvas id="cWeights" width="1000" height="420"></canvas>
+      <div class="legend">
+        <span><i style="background:#D9B44A"></i>L = u&sup2; = 0.477542 &nbsp;direct</span>
+        <span><i style="background:#4E7BA8"></i>B = 2ur = 0.426942 &nbsp;related</span>
+        <span><i style="background:#8A4B3C"></i>M = r&sup2; = 0.095492 &nbsp;held</span>
+      </div>
+    </div>
+    <figcaption>The unit square partitioned by ( u + r )&sup2; = u&sup2; + 2ur + r&sup2;, drawn to true scale. Nobody went shopping for three ingredients. Three is how many ways two channels can be squared together once reading direction stops mattering.</figcaption>
+  </figure>
+
+  <p>Then the identifications, which are a different kind of claim and are marked as one. The direct weight, content that carries with nothing held behind it, reads as <b>light</b>. The mixed weight, meaning that exists only in the relation between what is out and what is kept, reads as <b>boundary</b>. The held weight, content folded away as history, reads as <b>matter</b>.</p>
+  <div class="grade"><b>PROPOSED</b> &mdash; the physical reading is offered for calculation and falsification, not delivered by the algebra. The partition itself is proved.</div>
+</section>
+
+<section id="s3">
+  <div class="mv">Movement Three</div>
+  <h2>The carrier</h2>
+  <p class="lede">Self-description imposes one further condition, and it is strict enough to name the stage the whole drama plays out on. A record that describes its own system has to be readable as its own dual: what the record says about the system, and what the system says through the record, must be the same object, or the description is quietly describing something else. Remarkably few structures pass that filter. Among the lattices that can carry the golden proportion, the demand for an even, self-dual, minimal carrier lands on exactly one.</p>
+
+  <figure>
+    <div class="plate">
+      <canvas id="cE8" width="1000" height="1000" style="max-width:min(100%,640px);margin:0 auto"></canvas>
+      <div class="pairs" id="pairBtns">
+        <button type="button" data-pair="0" aria-pressed="false">rings 1 &amp; 2</button>
+        <button type="button" data-pair="1" aria-pressed="false">rings 3 &amp; 6</button>
+        <button type="button" data-pair="2" aria-pressed="false">rings 4 &amp; 7</button>
+        <button type="button" data-pair="3" aria-pressed="false">rings 5 &amp; 8</button>
+        <button type="button" data-pair="-1" aria-pressed="true">all 240</button>
+      </div>
+      <div class="readout" style="margin:1.5rem 0 0">
+        <div class="rd"><span class="k">Outer &divide; inner</span><span class="v" id="e8Ratio">&mdash;</span></div>
+        <div class="rd"><span class="k">&phi;</span><span class="v sm">1.618033989</span></div>
+        <div class="rd"><span class="k">Deviation</span><span class="v sm" id="e8Dev">&mdash;</span></div>
+      </div>
+    </div>
+    <figcaption>The 240 roots of E8, projected onto the Coxeter plane, computed here from the Cartan matrix and the eigenvectors of the Coxeter element. They fall into eight rings of thirty. Select a pair to see what the rings do.</figcaption>
+  </figure>
+
+  <p>E8 is usually met as a piece of exceptional mathematics that turned up, uninvited, in a few corners of physics. Here it is not imported from anywhere: it is what a self-describing system has to be written on. And it carries the golden proportion in its bones. The eight rings pair off, four pairs, and every pair stands in the ratio &phi; &mdash; to machine precision, from a computation that was never told about &phi; at all.</p>
+  <div class="grade"><b>CONDITIONAL</b> &mdash; E8 is forced once self-duality, evenness, and minimality are required of the carrier. The self-duality is not a new demand: it is the two-sided reading that fixed the factor of two in r, stated of the stage instead of the step.</div>
+</section>
+
+<section id="s4">
+  <div class="mv">Movement Four</div>
+  <h2>The price of crossing</h2>
+  <p class="lede">The three weights say how a whole divides. They also fix what it costs to cross one. An action that enters a system and leaves it again as the same action has traversed all three channels in sequence: out along the direct, across the related, through the held, and out. Each crossing is one act of self-description, and one act retains exactly r. Three crossings, three factors.</p>
+
+  <figure>
+    <div class="plate">
+      <canvas id="cPrice" width="1000" height="300"></canvas>
+      <div class="readout" style="margin:1.7rem 0 0">
+        <div class="rd"><span class="k">r&sup3; exact</span><span class="v">(&radic;5 &minus; 2) / 8</span></div>
+        <div class="rd"><span class="k">Decimal</span><span class="v sm">0.0295085</span></div>
+        <div class="rd"><span class="k">Retained across three</span><span class="v sm">0.9140611</span></div>
+      </div>
+    </div>
+    <figcaption>Each crossing retains the same fraction, so three crossings compound. The number is written as a surd on purpose: a decimal in that position reads as something fitted, while the closed form shows what it is.</figcaption>
+  </figure>
+
+  <p>The reading has a sharp edge, and the universe has already run the experiment. Photons born in the Sun's core random-walk outward for tens of thousands of years and arrive remembering nothing of the direction they began with. Neutrinos from the same core cross the whole star in about two seconds and arrive still pointing at where they came from, sharply enough that there exist directional images of the Sun taken in neutrinos, <em>through the star</em>. Same body, same source, two carriers, two opposite outcomes. Opacity is not a property of a body. It is a property of a body and a carrier taken together.</p>
+  <div class="grade"><b>PROVED</b> as arithmetic; <b>PROPOSED</b> as physics. The two solar facts are established measurement, not the framework's. Their reading as carrier-relative opacity is the proposal.</div>
+</section>
+
+<section id="s5">
+  <div class="mv">Movement Five</div>
+  <h2>The luminous wound</h2>
+  <p class="lede">A single channel is possible. It can distinguish, hold, and repeat, without end. It simply cannot describe itself. It would be recursion without expression, and it would have no surface, because a bounded face is what the outward channel builds. It would not be a sphere. It would be an ocean.</p>
+  <p>But the one rule only accumulates, and reserves only fill. A single channel that only accumulates must eventually reach the condition where one channel can no longer carry what it has taken on. At that wall there are two continuations and no third: overwrite itself, which is stalling, or split off a second channel to carry what is resolved. The split is not luck. It is what a saturated recursion is forced to do.</p>
+
+  <figure>
+    <div class="plate">
+      <canvas id="cWound" width="1000" height="440"></canvas>
+      <div class="readout" style="margin:1.6rem 0 0">
+        <div class="rd"><span class="k">Phase</span><span class="v sm" id="wPhase">the recursion stretches</span></div>
+      </div>
+    </div>
+    <figcaption>Stretch lowers what the carrier can bear while the demand continues. Congestion becomes excitation, excitation opens the radiative channel, continuity tears, and light reaches the wound first. Whatever matter is already within that closure keeps moving.</figcaption>
+  </figure>
+
+  <p>Nothing is invited in afterwards. The matter of the new world is not poured into a luminous bubble: it is whatever was already caught in the rupture when the seal ran round. The light closes. The matter continues. And because the one rule only adds, the readout cannot overwrite what it has already resolved &mdash; so the record grows, and a growing record is what physical time is.</p>
+  <p class="disp">Light closes the wound in space and keeps it open as time.</p>
+  <div class="grade"><b>PROPOSED</b> &mdash; the mechanism, offered for construction and falsification. <b>PROVED</b>, given the one rule: that the record must retain rather than replace. The scar does not mark what was destroyed. It is the world made from what was preserved.</div>
+</section>
+
+<div class="coda">
+  <p>The recursion stretches.</p>
+  <p>The carrier narrows.</p>
+  <p>The sentences become finite.</p>
+  <p>They do not return.</p>
+  <p>Light protects their leaving.</p>
+  <p>Order becomes record.</p>
+  <p>The wound becomes time.</p>
+  <p class="last">The record becomes a world.</p>
+  <p class="note" style="max-width:46ch;margin:4rem auto 0;text-align:center">This page is itself a record. The counter in the corner has been holding every distinction it drew for you, and it never went down.</p>
+  <div class="seal">One wound &middot; one protection &middot; one unbroken record</div>
+</div>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const PHI = (1+Math.sqrt(5))/2, r = 1/(2*PHI), u = 1-r;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+/* ---------- the record: counts what the page has drawn, never decreases ---------- */
+let held = 0, shown = 0;
+const out = document.getElementById("rcount");
+function add(n){ held += n; if (!rafAlive) paintCount(); }
+function paintCount(){ shown = held; out.textContent = shown.toLocaleString(); }
+
+/* ---------- is this environment actually animating? ---------- */
+let rafTicks = 0, rafAlive = false;
+requestAnimationFrame(function beat(){ rafTicks++; if (rafTicks > 2) rafAlive = true; requestAnimationFrame(beat); });
+
+(function tick(){
+  if (shown < held){
+    shown += Math.max(1, Math.ceil((held-shown)/9));
+    if (shown > held) shown = held;
+    out.textContent = shown.toLocaleString();
+  }
+  requestAnimationFrame(tick);
+})();
+
+/* ---------- crisp canvas ---------- */
+function fit(cv, h){
+  const dpr = Math.min(devicePixelRatio||1, 2);
+  const w = cv.clientWidth || 900;
+  cv.width = w*dpr; cv.height = h*dpr;
+  cv.style.height = h+"px";
+  const g = cv.getContext("2d");
+  g.setTransform(dpr,0,0,dpr,0,0);
+  return {g, w, h};
+}
+
+/* ---------- fire once when an element is on screen; rect-based, no observer needed ---------- */
+const watchers = [];
+function whenSeen(el, fn){
+  watchers.push({el, fn, done:false});
+  sweep();
+}
+function sweep(){
+  const vh = innerHeight || 800;
+  watchers.forEach(w=>{
+    if (w.done) return;
+    const b = w.el.getBoundingClientRect();
+    if (b.top < vh*0.9 && b.bottom > 0){ w.done = true; w.fn(); }
+  });
+}
+addEventListener("scroll", sweep, {passive:true});
+addEventListener("resize", sweep);
+addEventListener("load", sweep);
+
+/* ================= 1. the update converging on phi ================= */
+const cPhi = document.getElementById("cPhi");
+const stepEl = document.getElementById("phiStep"), valEl = document.getElementById("phiVal");
+const STEPS = 14;
+function ratioSeries(n){
+  let a=1, b=1; const out=[a/b];
+  for (let i=0;i<n;i++){ const na=a+b; b=a; a=na; out.push(a/b); }
+  return out;
+}
+function drawPhi(ratios){
+  const {g,w,h} = fit(cPhi, 290);
+  const pad = {l:52, r:16, t:18, b:30};
+  const iw = w-pad.l-pad.r, ih = h-pad.t-pad.b;
+  const lo = 0.9, hi = 2.15;
+  const Y = v => pad.t + ih*(1-(v-lo)/(hi-lo));
+  const X = i => pad.l + iw*(i/STEPS);
+  g.clearRect(0,0,w,h);
+
+  g.strokeStyle = css("--gold"); g.globalAlpha=.42; g.lineWidth=1; g.setLineDash([3,4]);
+  g.beginPath(); g.moveTo(pad.l, Y(PHI)); g.lineTo(w-pad.r, Y(PHI)); g.stroke();
+  g.setLineDash([]); g.globalAlpha=1;
+  g.fillStyle = css("--muted"); g.font = '12px '+css("--mono");
+  g.fillText("\u03c6", pad.l-24, Y(PHI)+4);
+  g.font = '11px '+css("--mono");
+  g.fillText("1.0", pad.l-32, Y(1)+4);
+
+  g.strokeStyle = css("--rule"); g.lineWidth=1;
+  g.beginPath(); g.moveTo(pad.l, pad.t); g.lineTo(pad.l, pad.t+ih); g.lineTo(w-pad.r, pad.t+ih); g.stroke();
+
+  g.strokeStyle = css("--head"); g.lineWidth=1.6; g.beginPath();
+  ratios.forEach((v,i)=>{ i?g.lineTo(X(i),Y(v)):g.moveTo(X(i),Y(v)); });
+  g.stroke();
+  ratios.forEach((v,i)=>{
+    const last = i===ratios.length-1;
+    g.fillStyle = last ? css("--gold") : css("--head");
+    g.globalAlpha = last ? 1 : .5;
+    g.beginPath(); g.arc(X(i), Y(v), last?4.5:2.6, 0, 7); g.fill();
+  });
+  g.globalAlpha = 1;
+}
+function phiFinal(){
+  const rs = ratioSeries(STEPS);
+  stepEl.textContent = STEPS;
+  valEl.textContent = rs[rs.length-1].toFixed(10);
+  drawPhi(rs);
+}
+whenSeen(cPhi, ()=>{
+  if (RM || !rafAlive){ phiFinal(); add(STEPS); return; }
+  let n = 0;
+  (function step(){
+    n++;
+    const rs = ratioSeries(n);
+    stepEl.textContent = n;
+    valEl.textContent = rs[rs.length-1].toFixed(10);
+    add(1);
+    drawPhi(rs);
+    if (n < STEPS) setTimeout(step, 190);
+  })();
+});
+
+/* ================= 2. the three weights ================= */
+const cW = document.getElementById("cWeights");
+function drawWeights(t){
+  const {g,w,h} = fit(cW, 420);
+  const S = Math.min(w-40, h-40), ox = (w-S)/2, oy = (h-S)/2;
+  g.clearRect(0,0,w,h);
+  const uu = u*S, rr = r*S;
+  const cells = [
+    [ox, oy, uu, uu, "#D9B44A", .92],
+    [ox+uu, oy, rr, uu, "#4E7BA8", .82],
+    [ox, oy+uu, uu, rr, "#4E7BA8", .82],
+    [ox+uu, oy+uu, rr, rr, "#8A4B3C", .92]
+  ];
+  cells.forEach((c,i)=>{
+    const k = Math.max(0, Math.min(1, t*4 - i));
+    if (k<=0) return;
+    g.globalAlpha = c[5]*k; g.fillStyle = c[4];
+    g.fillRect(c[0], c[1], c[2], c[3]);
+  });
+  g.globalAlpha = 1;
+  g.strokeStyle = css("--ground"); g.lineWidth = 1.5;
+  g.strokeRect(ox, oy, uu, uu); g.strokeRect(ox+uu, oy, rr, uu);
+  g.strokeRect(ox, oy+uu, uu, rr); g.strokeRect(ox+uu, oy+uu, rr, rr);
+  g.strokeStyle = css("--muted"); g.globalAlpha=.5; g.strokeRect(ox, oy, S, S); g.globalAlpha=1;
+
+  g.font = '13px '+css("--mono"); g.textAlign = "center";
+  if (t > .35){ g.fillStyle="rgba(26,22,12,.88)"; g.fillText("u\u00b2", ox+uu/2, oy+uu/2+5); }
+  if (t > .7){
+    g.fillStyle="rgba(255,252,245,.92)";
+    g.fillText("ur", ox+uu+rr/2, oy+uu/2+5);
+    g.fillText("ru", ox+uu/2, oy+uu+rr/2+5);
+  }
+  if (t > .95){ g.fillStyle="rgba(255,252,245,.94)"; g.font='11px '+css("--mono"); g.fillText("r\u00b2", ox+uu+rr/2, oy+uu+rr/2+4); }
+  g.textAlign = "left";
+}
+whenSeen(cW, ()=>{
+  if (RM || !rafAlive){ drawWeights(1); add(3); return; }
+  const t0 = performance.now(); let counted = 0;
+  (function anim(now){
+    const t = Math.min(1, (now-t0)/1500);
+    drawWeights(t);
+    const c = Math.floor(t*3.999);
+    if (c > counted){ add(c-counted); counted = c; }
+    if (t < 1) requestAnimationFrame(anim); else if (counted < 3) add(3-counted);
+  })(performance.now());
+});
+
+/* ================= 3. E8, the golden skeleton ================= */
+const E8DATA = "-0.1045,-0.4918,3;0.1045,0.3217,1;-0.1045,-0.3217,1;0.1045,0.4918,3;-0.1691,-0.2929,1;0.1691,0.1229,0;-0.1691,-0.1229,0;0.1691,0.2929,1;-0.1910,-0.0850,0;0.1910,-0.0850,0;-0.1910,0.0850,0;0.1910,0.0850,0;-0.1691,0.1229,0;0.1691,-0.2929,1;-0.1691,0.2929,1;0.1691,-0.1229,0;-0.1045,0.3217,1;0.1045,-0.4918,3;-0.1045,0.4918,3;0.1045,-0.3217,1;-0.0000,0.5028,3;0.0000,-0.6728,5;-0.0000,0.6728,5;0.0000,-0.5028,3;-0.8090,-0.0850,6;0.8090,-0.0850,6;-0.8090,0.0850,6;0.8090,0.0850,6;-0.2737,-0.6146,5;0.0646,-0.1988,0;-0.0646,0.1988,0;0.2737,0.6146,5;-0.2955,-0.4067,3;0.0865,-0.4067,2;-0.0865,0.4067,2;0.2955,0.4067,3;-0.2737,-0.1988,1;0.0646,-0.6146,4;-0.0646,0.6146,4;0.2737,0.1988,1;-0.2091,-0.0000,0;0.0000,-0.8135,6;-0.0000,0.8135,6;0.2091,0.0000,0;-0.1045,0.1810,0;-0.1045,-0.9945,7;0.1045,0.9945,7;0.1045,-0.1810,0;-0.9135,-0.4067,7;0.7045,-0.4067,6;-0.7045,0.4067,6;0.9135,0.4067,7;-0.3601,-0.2079,2;0.0219,-0.2079,0;-0.0219,0.2079,0;0.3601,0.2079,2;-0.3383,-0.0000,1;0.0000,-0.4158,2;-0.0000,0.4158,2;0.3383,0.0000,1;-0.2737,0.1988,1;-0.0646,-0.6146,4;0.0646,0.6146,4;0.2737,-0.1988,1;-0.1691,0.3799,2;-0.1691,-0.7957,6;0.1691,0.7957,6;0.1691,-0.3799,2;-0.9781,-0.2079,7;0.6399,-0.2079,5;-0.6399,0.2079,5;0.9781,0.2079,7;-0.3601,0.2079,2;-0.0219,-0.2079,0;0.0219,0.2079,0;0.3601,-0.2079,2;-0.2955,0.4067,3;-0.0865,-0.4067,2;0.0865,0.4067,2;0.2955,-0.4067,3;-0.1910,0.5878,4;-0.1910,-0.5878,4;0.1910,0.5878,4;0.1910,-0.5878,4;-1.0000,-0.0000,7;0.6180,0.0000,4;-0.6180,-0.0000,4;1.0000,0.0000,7;-0.2737,0.6146,5;-0.0646,-0.1988,0;0.0646,0.1988,0;0.2737,-0.6146,5;-0.1691,0.7957,6;-0.1691,-0.3799,2;0.1691,0.3799,2;0.1691,-0.7957,6;-0.9781,0.2079,7;0.6399,0.2079,5;-0.6399,-0.2079,5;0.9781,-0.2079,7;-0.1045,0.9945,7;-0.1045,-0.1810,0;0.1045,0.1810,0;0.1045,-0.9945,7;-0.9135,0.4067,7;0.7045,0.4067,6;-0.7045,-0.4067,6;0.9135,-0.4067,7;-0.8090,0.5878,7;0.8090,0.5878,7;-0.8090,-0.5878,7;0.8090,-0.5878,7;-0.7737,0.2514,6;0.0354,-0.3364,1;0.1399,-0.1554,0;-0.6691,-0.7431,7;0.2045,0.0435,0;-0.6045,-0.5443,6;-0.5000,-0.3633,4;0.3090,-0.9511,7;0.2263,0.2514,1;-0.5827,-0.3364,5;-0.4781,-0.1554,3;0.3309,-0.7431,6;-0.4135,0.0435,2;0.3955,-0.5443,5;0.5000,-0.3633,4;-0.3090,-0.9511,7;0.2045,0.4593,3;-0.6045,-0.1285,4;-0.5000,0.0526,3;0.3090,-0.5352,4;-0.4354,0.2514,3;0.3736,-0.3364,3;0.4781,-0.1554,3;-0.3309,-0.7431,6;-0.4135,0.4593,4;0.3955,-0.1285,2;0.5000,0.0526,3;-0.3090,-0.5352,4;0.5646,0.2514,4;-0.2444,-0.3364,2;-0.1399,-0.1554,0;0.6691,-0.7431,7;0.1399,0.6581,5;-0.6691,0.0703,5;-0.5646,0.2514,4;0.2444,-0.3364,2;-0.5000,0.4502,5;0.3090,-0.1376,1;0.4135,0.0435,2;-0.3955,-0.5443,5;-0.4781,0.6581,6;0.3309,0.0703,1;0.4354,0.2514,3;-0.3736,-0.3364,3;0.5000,0.4502,5;-0.3090,-0.1376,1;-0.2045,0.0435,0;0.6045,-0.5443,6;-0.5000,0.8660,7;0.3090,0.2782,2;0.4135,0.4593,4;-0.3955,-0.1285,2;0.4781,0.6581,6;-0.3309,0.0703,1;-0.2263,0.2514,1;0.5827,-0.3364,5;0.5000,0.8660,7;-0.3090,0.2782,2;-0.2045,0.4593,3;0.6045,-0.1285,4;-0.1399,0.6581,5;0.6691,0.0703,5;0.7737,0.2514,6;-0.0354,-0.3364,1;0.0354,0.3364,1;-0.7737,-0.2514,6;-0.6691,-0.0703,5;0.1399,-0.6581,5;-0.6045,0.1285,4;0.2045,-0.4593,3;0.3090,-0.2782,2;-0.5000,-0.8660,7;-0.5827,0.3364,5;0.2263,-0.2514,1;0.3309,-0.0703,1;-0.4781,-0.6581,6;0.3955,0.1285,2;-0.4135,-0.4593,4;-0.3090,-0.2782,2;0.5000,-0.8660,7;-0.6045,0.5443,6;0.2045,-0.0435,0;0.3090,0.1376,1;-0.5000,-0.4502,5;0.3736,0.3364,3;-0.4354,-0.2514,3;-0.3309,-0.0703,1;0.4781,-0.6581,6;0.3955,0.5443,5;-0.4135,-0.0435,2;-0.3090,0.1376,1;0.5000,-0.4502,5;-0.2444,0.3364,2;0.5646,-0.2514,4;0.6691,-0.0703,5;-0.1399,-0.6581,5;-0.6691,0.7431,7;0.1399,0.1554,0;0.2444,0.3364,2;-0.5646,-0.2514,4;0.3090,0.5352,4;-0.5000,-0.0526,3;-0.3955,0.1285,2;0.4135,-0.4593,4;0.3309,0.7431,6;-0.4781,0.1554,3;-0.3736,0.3364,3;0.4354,-0.2514,3;-0.3090,0.5352,4;0.5000,-0.0526,3;0.6045,0.1285,4;-0.2045,-0.4593,3;0.3090,0.9511,7;-0.5000,0.3633,4;-0.3955,0.5443,5;0.4135,-0.0435,2;-0.3309,0.7431,6;0.4781,0.1554,3;0.5827,0.3364,5;-0.2263,-0.2514,1;-0.3090,0.9511,7;0.5000,0.3633,4;0.6045,0.5443,6;-0.2045,-0.0435,0;0.6691,0.7431,7;-0.1399,0.1554,0;-0.0354,0.3364,1;0.7737,-0.2514,6";
+const PTS = E8DATA.split(";").map(s=>{const a=s.split(","); return {x:+a[0], y:+a[1], ring:+a[2]};});
+const RADII = [0.209057,0.338261,0.415823,0.502754,0.618034,0.672816,0.813473,1.0];
+const PAIRS = [[0,1],[2,5],[3,6],[4,7]];
+const cE8 = document.getElementById("cE8");
+let sel = -1, e8n = 0, spin = 0;
+
+function rot(p){
+  if (!spin) return p;
+  const c = Math.cos(spin), s = Math.sin(spin);
+  return {x: p.x*c - p.y*s, y: p.x*s + p.y*c};
+}
+function drawE8(){
+  const side = cE8.clientWidth || 640;
+  const {g,w} = fit(cE8, side);
+  const cx = w/2, cy = w/2, R = w*0.435;
+  g.clearRect(0,0,w,w);
+  const on = i => sel<0 || PAIRS[sel].indexOf(i)>=0;
+
+  RADII.forEach((rad,i)=>{
+    g.beginPath(); g.arc(cx, cy, rad*R, 0, 7);
+    g.strokeStyle = on(i) ? css("--gold") : css("--rule");
+    g.globalAlpha = on(i) ? (sel<0 ? .16 : .5) : .17;
+    g.lineWidth = on(i) && sel>=0 ? 1.1 : .7;
+    g.stroke();
+  });
+  g.globalAlpha = 1;
+
+  if (sel < 0){
+    g.strokeStyle = css("--head"); g.globalAlpha = .085; g.lineWidth = .55;
+    g.beginPath();
+    const lim = Math.min(e8n, PTS.length);
+    for (let k=0; k<lim; k++){
+      const p = PTS[k];
+      for (let j=k+1; j<lim; j++){
+        const q = PTS[j];
+        if (q.ring !== p.ring) continue;
+        if (Math.hypot(p.x-q.x, p.y-q.y) < 0.24){
+          const a = rot(p), b = rot(q);
+          g.moveTo(cx+a.x*R, cy-a.y*R); g.lineTo(cx+b.x*R, cy-b.y*R);
+        }
+      }
+    }
+    g.stroke(); g.globalAlpha = 1;
+  }
+
+  for (let k=0; k<Math.min(e8n, PTS.length); k++){
+    const p = PTS[k], a = rot(p);
+    const lit = on(p.ring);
+    g.globalAlpha = lit ? 1 : .13;
+    g.fillStyle = lit ? css("--gold") : css("--muted");
+    if (lit){ g.shadowColor = css("--glow"); g.shadowBlur = 9; }
+    g.beginPath(); g.arc(cx + a.x*R, cy - a.y*R, lit ? 2.9 : 2, 0, 7); g.fill();
+    g.shadowBlur = 0;
+  }
+  g.globalAlpha = 1;
+}
+function setPair(i){
+  sel = i;
+  const rEl = document.getElementById("e8Ratio"), dEl = document.getElementById("e8Dev");
+  if (i < 0){ rEl.textContent = "\u2014"; dEl.textContent = "\u2014"; }
+  else {
+    const p = PAIRS[i], ratio = RADII[p[1]]/RADII[p[0]];
+    rEl.textContent = ratio.toFixed(9);
+    dEl.textContent = Math.abs(ratio-PHI).toExponential(1);
+  }
+  document.querySelectorAll("#pairBtns button").forEach(b=>{
+    b.setAttribute("aria-pressed", String(+b.dataset.pair === i));
+  });
+  if (e8n) drawE8();
+}
+document.getElementById("pairBtns").addEventListener("click", e=>{
+  const b = e.target.closest("button"); if (!b) return;
+  setPair(+b.dataset.pair);
+});
+whenSeen(cE8, ()=>{
+  if (RM || !rafAlive){ e8n = PTS.length; add(240); drawE8(); return; }
+  const t0 = performance.now();
+  (function grow(now){
+    const t = Math.min(1, (now-t0)/2600);
+    const target = Math.floor(t*PTS.length);
+    if (target > e8n){ add(target-e8n); e8n = target; }
+    spin = (now-t0)/90000;
+    drawE8();
+    if (t < 1) requestAnimationFrame(grow);
+    else { e8n = PTS.length; (function s(n2){ spin = n2/90000; drawE8(); requestAnimationFrame(s); })(performance.now()); }
+  })(performance.now());
+});
+addEventListener("resize", ()=>{ if (e8n) drawE8(); });
+
+/* ================= 4. the price ladder ================= */
+const cP = document.getElementById("cPrice");
+whenSeen(cP, ()=>{
+  const {g,w,h} = fit(cP, 300);
+  const pad = 54, bw = (w-pad*2)/4;
+  g.clearRect(0,0,w,h);
+  const vals = [1, r, r*r, r*r*r];
+  const labs = ["entering", "one crossing", "two", "three"];
+  const base = h-52, top = 26;
+  vals.forEach((v,i)=>{
+    const bh = Math.max(2.5, (base-top)*v);
+    const x = pad + i*bw + bw*0.18, ww = bw*0.64;
+    g.fillStyle = i===3 ? css("--gold") : css("--head");
+    g.globalAlpha = i===3 ? 1 : .22 + i*0.06;
+    g.fillRect(x, base-bh, ww, bh);
+    g.globalAlpha = 1;
+    g.font = '11px '+css("--mono"); g.textAlign="center";
+    g.fillStyle = css("--muted");
+    g.fillText(labs[i], x+ww/2, base+20);
+    g.fillStyle = i===3 ? css("--gold") : css("--ink");
+    g.fillText(i===0 ? "1" : v.toFixed(6), x+ww/2, base-bh-9);
+    g.textAlign="left";
+  });
+  g.strokeStyle = css("--rule"); g.beginPath();
+  g.moveTo(pad, base+.5); g.lineTo(w-pad, base+.5); g.stroke();
+  add(3);
+});
+
+/* ================= 5. the wound ================= */
+const cWd = document.getElementById("cWound");
+const phaseEl = document.getElementById("wPhase");
+const PHASES = [
+  [0.00,"the recursion stretches"],
+  [0.26,"the carrier narrows"],
+  [0.44,"impedance rises"],
+  [0.60,"the face tears"],
+  [0.72,"light arrives first"],
+  [0.86,"the scar becomes a sky"]
+];
+const seeds = Array.from({length:90},(_,i)=>({
+  a: (i*2.39996), d: ((i*37)%100)/100, s: .3+(((i*53)%80)/100), p: (i*0.7)%6.3
+}));
+let wCounted = 0, wLast = -1;
+function paintWound(T, tms){
+  const {g,w,h} = fit(cWd, 440);
+  const cx = w/2, cy = h*0.55;
+  g.clearRect(0,0,w,h);
+
+  let pi = 0;
+  for (let i=0;i<PHASES.length;i++) if (T >= PHASES[i][0]) pi = i;
+  if (pi !== wLast){ phaseEl.textContent = PHASES[pi][1]; wLast = pi; if (pi+1 > wCounted){ add(1); wCounted++; } }
+
+  const stretch = Math.min(1, T/0.55);
+  const tear = Math.max(0, Math.min(1, (T-0.58)/0.12));
+  const light = Math.max(0, Math.min(1, (T-0.68)/0.14));
+  const sky = Math.max(0, Math.min(1, (T-0.84)/0.16));
+
+  const amp = 26*(1-stretch*0.72), band = 62*(1-stretch*0.66);
+  g.lineWidth = 1;
+  const heat = Math.min(1, Math.max(0,(T-0.3)/0.3));
+  for (let k=-3;k<=3;k++){
+    g.beginPath();
+    for (let x=0;x<=w;x+=4){
+      const ph = x/150 + tms/2600 + k*0.4;
+      const y = cy + k*(band/6) + Math.sin(ph)*amp*(1 - 0.55*Math.exp(-Math.pow((x-cx)/(w*0.17),2)));
+      x ? g.lineTo(x,y) : g.moveTo(x,y);
+    }
+    g.strokeStyle = css("--head");
+    g.globalAlpha = (0.10 + 0.12*(1-Math.abs(k)/4));
+    g.stroke();
+    if (heat > 0){
+      g.strokeStyle = "#C86A32"; g.globalAlpha = heat*0.30*(1-Math.abs(k)/4);
+      g.stroke();
+    }
+  }
+  g.globalAlpha = 1;
+
+  if (tear > 0){
+    const rr = 96*tear;
+    g.save(); g.globalCompositeOperation = "destination-out";
+    g.beginPath(); g.ellipse(cx, cy, rr*1.5, rr, 0, 0, 7); g.fill();
+    g.restore();
+  }
+  if (light > 0){
+    const rr = 96 + 26*light;
+    g.beginPath(); g.ellipse(cx, cy, rr*1.5, rr, 0, 0, 7);
+    g.strokeStyle = css("--gold"); g.lineWidth = 2.4*light;
+    g.shadowColor = css("--gold"); g.shadowBlur = 34*light;
+    g.globalAlpha = Math.min(1, light*1.15);
+    g.stroke(); g.shadowBlur = 0; g.globalAlpha = 1;
+  }
+  if (sky > 0){
+    seeds.forEach(s=>{
+      const gr = sky*(0.35+s.d*0.85);
+      const X = cx + Math.cos(s.a)*(96*1.5)*gr*s.s, Y = cy + Math.sin(s.a)*96*gr*s.s;
+      g.fillStyle = css("--gold");
+      g.globalAlpha = sky*(0.25+0.6*(1-s.d))*(0.6+0.4*Math.sin(tms/700+s.p));
+      g.beginPath(); g.arc(X, Y, 1.5, 0, 7); g.fill();
+    });
+    g.globalAlpha = 1;
+  }
+}
+whenSeen(cWd, ()=>{
+  if (RM || !rafAlive){ paintWound(0.93, 2000); return; }
+  (function frame(t){ paintWound((t/9000)%1, t); requestAnimationFrame(frame); })(performance.now());
+});
+
+/* ---------- safety net: if nothing is animating, paint every figure's final state ---------- */
+addEventListener("load", ()=>{
+  setTimeout(()=>{
+    if (rafAlive) return;
+    watchers.forEach(w=>{ if (!w.done){ w.done = true; w.fn(); } });
+    if (!cPhi.width || valEl.textContent === "\u2014") { phiFinal(); }
+    paintCount();
+  }, 400);
+});
+
+/* redraw on theme change */
+new MutationObserver(()=>{ if (e8n) drawE8(); })
+  .observe(document.documentElement, {attributes:true, attributeFilter:["data-theme"]});
+})();
+
+</script>

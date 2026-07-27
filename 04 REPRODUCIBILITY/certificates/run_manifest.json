@@ -1,0 +1,324 @@
+{
+  "command": "python run_all.py",
+  "generated": "2026-07-27T15:15:19",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.18.0",
+    "matplotlib": "3.11.0"
+  },
+  "inputs": {
+    "nodes.csv": "206dbaa62bf493378790f3faaef080e81947146d3ec7c643de535deb08f1fa8c",
+    "dependencies.csv": "565a2e16c5420295275407ce09ad191b3d3c70db72360d8b045d54891c8024d4"
+  },
+  "data": {
+    "data/SPARC/MassModels_Lelli2016c.mrt": "9108994b12cc401b94a1768beca61c53ec354779385c9c9cc571049f3043244c",
+    "data/SPARC/RAR.mrt": "24aa7059dab7fa44787f7c11191052489899819370f6508621674769f3b72833",
+    "data/SPARC/RARbins.mrt": "d543cab7b720a4f14152ccc8158f7823072ce65a9c5b403d7c401b3f039a79d7",
+    "data/SPARC/SPARC_Lelli2016c.mrt": "5aa0501f6b0d881fa579030e315e7b5b6ef561a5bd3a07472f9929c7e5728243"
+  },
+  "steps": [
+    {
+      "script": "validate_dependencies.py",
+      "purpose": "the dependency graph, acyclicity, and what rests on each obligation",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.09,
+      "script_sha256": "0cfa96a754e4b3ec2f4ab7f0cded006c4d7114f1aeb76e2017508b71975a7ff5",
+      "stdout_tail": [
+        "stated but unused (9): A1, A2, A4, D12, D2, D3, D5, D6, D8",
+        "",
+        "No result T1..T28 stands on any open obligation O1..O7.",
+        "",
+        "What rests on each obligation:",
+        "  O1: O2, O3",
+        "  O2: (nothing)",
+        "  O3: (nothing)",
+        "  O4: N_lambda",
+        "  O5: (nothing)",
+        "  O6: (nothing)",
+        "  O7: (nothing)"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "distance_from_the_line.py",
+      "purpose": "derivation distance from phi^2 = phi + 1",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.07,
+      "script_sha256": "df0eac9925f5111287e7d97512db23ed1e530380f3dd7673253c4498535afec0",
+      "stdout_tail": [
+        "            \"Two channels squared give four combinations\"",
+        "     T4 <- T3   The stable ratio is the golden fixed point",
+        "            \"u and r are then pinned\"",
+        "",
+        "T7  The traversal price in closed form   [2 steps from the line]",
+        "     T7 <- T4   The retained fraction is 1/(2 phi)",
+        "            \"r cubed equals one over eight phi cubed\"",
+        "     T4 <- T3   The stable ratio is the golden fixed point",
+        "            \"u and r are then pinned\"",
+        "",
+        "Results not descending from T3 (22): T1, T12, T13, T14, T15, T16, T17, T18, T19, T2, T20, T21, T22, T25, T26, T27, T28, T29, T30, T32, T8, T9",
+        "These descend from the two-sided reading A3, the record D11, or the reduction A6."
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "o4_carrier_closure.py",
+      "purpose": "O4: explicit complete carrier closure through all 240 roots",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.19,
+      "script_sha256": "a42554de63a97b6bfaa50d07222209721fb3dbe5bc6e6081915e22462f9cdc77",
+      "stdout_tail": [
+        "roots: 240, all of norm two",
+        "sum of all 240 roots is zero: True   <- the closure condition is free",
+        "admissibility graph: degree [56]",
+        "hamiltonian cycle found: True (seed 0)",
+        "  every root visited exactly once : True",
+        "  every step is a primitive crossing: True",
+        "  walk returns to its origin       : True",
+        "  witness sha256                   : fb470c1eeea556c7d9531b13ff105b81..."
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "o2_surviving_block.py",
+      "purpose": "O2: exhaustive rank-3 subsystems of E8 and their complements",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 3.67,
+      "script_sha256": "dc5869e177a9dab70bb7a51d646a5a2182eb1efb1acbbbbb232887df9a876fd8",
+      "stdout_tail": [
+        "(enumerated over all 2667 distinct rank-3 spans through one fixed root)",
+        "",
+        "decayed       rk  roots   surviving (perp)  rk  roots",
+        "--------------------------------------------------------------",
+        "A1+A1+A1       3      6   D4+A1          5     26",
+        "A2+A1          3      8   A5             5     30",
+        "A3             3     12   D5             5     40",
+        "",
+        "Pairings leaving a rank-5 survivor, i.e. a five-dimensional geometry block:",
+        "  decay A1+A1+A1  ->  surviving symmetry D4+A1 (26 roots)",
+        "  decay A2+A1  ->  surviving symmetry A5 (30 roots)",
+        "  decay A3  ->  surviving symmetry D5 (40 roots)"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "o2_elimination.py",
+      "purpose": "O2: elimination of candidates by T10 and T25",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.54,
+      "script_sha256": "73736a6c4a11822d323bca3203041347e3a258e70815bf8f649efab2be394f4f",
+      "stdout_tail": [
+        "candidate  comps  irred  triangle   survivor               verdict",
+        "------------------------------------------------------------------------------",
+        "A1+A1+A1       3  False     False   D4+A1 = so(8) + su(2)  eliminated",
+        "A2+A1          2  False      True   A5 = su(6)             eliminated",
+        "A3             1   True      True   D5 = so(10)            SURVIVES",
+        "",
+        "Unique candidate: decay on A3, surviving symmetry D5 = so(10).",
+        "Geometry block dimension 5, which with T15 and T16 gives 3 + 1 + 1.",
+        "Triangle witness in the decayed part: [[-2, -2, 0, 0, 0, 0, 0, 0], [0, 2, -2, 0, 0, 0, 0, 0], [2, 0, 2, 0, 0, 0, 0, 0]] (in halves)"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "o1_o3_representation.py",
+      "purpose": "O1 and O3: the reduction, the gauge algebra, the matter modules",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.28,
+      "script_sha256": "7645108cc83979cc64cdd50446c39dc0ee9882363f91e8fd535f20d9e44c94bf",
+      "stdout_tail": [
+        "  fixed subspace dimension: 5     decayed: 3",
+        "  -> the geometry block is 5-dimensional, so 3 + 1 + 1 by T15 and T16",
+        "",
+        "O3  the sorting of the 248 by T25",
+        "  decayed sector   A3 = su(4):  12 roots + 3 Cartan = 15",
+        "  commutes, GAUGE  D5 = so(10): 40 roots + 5 Cartan = 45",
+        "  connects sectors, MATTER:     188 roots",
+        "  total: 248",
+        "",
+        "  matter split by how far each root leans into the decayed sector:",
+        "    |proj_A3|^2 = 3/4   count 128   (4, 16) + (4bar, 16bar)   spinor of so(10)",
+        "    |proj_A3|^2 = 1     count  60   (6, 10)                   vector of so(10)"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "families.py",
+      "purpose": "O3: the family count from the decay's own Weyl group",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.29,
+      "script_sha256": "1d42b9f1cd2086f4f74321bf80eb056b1452ee7dd426527b2e9187cd7e303a07",
+      "stdout_tail": [
+        "orbit 1: size 4",
+        "   <chi, trivial> = 1      multiplicity of the invariant direction",
+        "   <chi, chi>     = 2      number of irreducible summands",
+        "   => the family index space splits as 1 + 3",
+        "orbit 2: size 4",
+        "   <chi, trivial> = 1      multiplicity of the invariant direction",
+        "   <chi, chi>     = 2      number of irreducible summands",
+        "   => the family index space splits as 1 + 3",
+        "",
+        "Families that connect distinct decay sectors and carry a distinct readable",
+        "identity, per T25: 3",
+        "Families if the decay-invariant direction is also counted: 4"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "e8_golden_tests.py",
+      "purpose": "T12: the golden ring pairing in the Coxeter plane",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 1.23,
+      "script_sha256": "ffd4473a86f46215eaea8d39a6af42c230f5134f3020d88d7758708d6e3e3b48",
+      "stdout_tail": [
+        "TEST 1 \u2014 golden ring pairing",
+        "  R2/R1 = 1.618033416514",
+        "  R6/R3 = 1.618034210490",
+        "  R7/R4 = 1.618034313422",
+        "  R8/R5 = 1.618034513996",
+        "TEST 2 \u2014 dB = sqrt5*phi^2/2 - sqrt8",
+        "  monograph: 0.098623858378652  covolume form: 0.098623858378652  equal: True",
+        "TEST 3 \u2014 cover ring-profile independence (negative result)",
+        "  seed 11: 27 distinct cell ring-profiles (cover-dependent)",
+        "  seed 42: 29 distinct cell ring-profiles (cover-dependent)",
+        "  seed 99: 25 distinct cell ring-profiles (cover-dependent)"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "interface_integral_test.py",
+      "purpose": "candidate interface coefficients against SPARC",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 1.07,
+      "script_sha256": "3a39bda091f84e1a8ae414d6a8556e9644e67588ab23243e8f1f1be67ba2b63b",
+      "stdout_tail": [
+        "n = 2696;  a* = cH0dB = 6.4545e-11",
+        "kappa=    1: a=6.4545e-11  rms=0.1577  bias=+0.0786",
+        "kappa=  3/2: a=9.6818e-11  rms=0.1349  bias=+0.0209",
+        "kappa=sqrt3: a=1.1180e-10  rms=0.1327  bias=-0.0012",
+        "kappa=    3: a=1.9364e-10  rms=0.1588  bias=-0.0792",
+        "free fit: a=1.1331e-10  rms=0.1327",
+        "wrote C:\\Users\\joesh\\Desktop\\Unified Mechanics \u2014 The Corpus (Corpus Edition 2026, Fifth Printing)\\04 REPRODUCIBILITY\\results\\interface_results.json"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "sparc_test.py",
+      "purpose": "the interface closure against the radial acceleration relation",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 2.33,
+      "script_sha256": "2961bc228b7436ae2d383b0f42415cc9358ffe24cdd01dfd9992a08e86fcb514",
+      "stdout_tail": [
+        "  },",
+        "  \"UM_freefit_weighted\": {",
+        "    \"a\": 1.3032905530648348e-10,",
+        "    \"estimator\": \"inverse-variance weighted rms\"",
+        "  },",
+        "  \"ratio_afit_over_astar\": 1.6401289869086317,",
+        "  \"sqrt3\": 1.7320508075688772",
+        "}",
+        "low-acc (n=839): UM frozen: rms=0.171 dex, bias=+0.086 dex",
+        "low-acc (n=839): UM sqrt3: rms=0.148 dex, bias=-0.021 dex",
+        "low-acc (n=839): RAR 1.2e-10: rms=0.148 dex, bias=-0.021 dex",
+        "wrote sparc_rar.png"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "neuro_avalanche_test.py",
+      "purpose": "negative screen: neuronal avalanche",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 6.32,
+      "script_sha256": "a933c35f56989d483dbd80c43e0f0ac1d08ef00b5b7ef9010e52de221cddc5b8",
+      "stdout_tail": [
+        "sigma=0.948  x=0.994  chi=1.006  target sqrt5=2.236  ceiling r^3=0.0295",
+        "VERDICT: FAIL (|chi-sqrt5|=1.23)"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "sgz_balanced_turnover_test.py",
+      "purpose": "negative screen: subgranular zone balanced turnover",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.05,
+      "script_sha256": "05a1fa01beaab9c9cbca27f587263ba4c97c6e09df8f3a42849da63087475945",
+      "stdout_tail": [
+        "r=0.3090  band=[0.280,0.339]  predicted committed:mitotic=sqrt5=2.236",
+        "  mitotic (frozen)      : x=0.200  ratio=4.00:1  FAIL (|x-r|=0.109)",
+        "  overlap-corrected     : x=0.300  ratio=2.33:1  PASS (|x-r|=0.009)",
+        "  fate (uncommitted only): x=0.091  ratio=10.00:1  FAIL (|x-r|=0.218)"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "dev_neurogenesis_test.py",
+      "purpose": "cortical neurogenesis accumulating-history extraction",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.23,
+      "script_sha256": "8e9c90317572e11a7f57a7efdee610069fe61bbfe2fa5b481cc658741726a5b3",
+      "stdout_tail": [
+        "x=r at E15.42; chi=sqrt5 at E14.68; separation 0.74 days",
+        "chi at x=r = 4.26 vs sqrt5=2.24; |\u0394|=2.02 ceiling r^3=0.0295",
+        "VERDICT: FAIL"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "o5_o6_cosmology.py",
+      "purpose": "O5 and O6: the vacuum readout and the Hubble stake",
+      "status": "ok",
+      "returncode": 0,
+      "seconds": 0.88,
+      "script_sha256": "2fe43006e33c0780466e9124f9a411fa879e6167664e243e15cf38bbd3577aca",
+      "stdout_tail": [
+        "       Planck 2018 TT,TE,EE         Omega_L = 0.6884 (measured 0.6847 +- 0.0073),  H0.t0 = 0.9539,  t0 = 13.846 Gyr",
+        "       Planck 2018 TT,TE,EE         Omega_L = 0.6823 (measured 0.6889 +- 0.0056),  H0.t0 = 0.9487,  t0 = 13.710 Gyr",
+        "",
+        "     the zeroth-order clause H.t = 1 is proved; the shortfall to 0.95 is the",
+        "     integrated price, and it now follows from lambda rather than being fitted.",
+        "",
+        "O6   the audited closure counts, tested on the Hubble pair",
+        "     retained over three crossings (1-r^3)^3 = 0.914061068   gap = 8.594%",
+        "     early  Planck 2018                H0 = 67.36 +- 0.54",
+        "     framework predicts local          H0 = 73.69 +- 0.59",
+        "     local  SH0ES 2022 (Riess et al.)  H0 = 73.04 +- 1.04",
+        "     pull = +0.55 sigma      (the corpus states 'about half a standard deviation')"
+      ],
+      "stderr_tail": []
+    }
+  ],
+  "outputs_written_or_changed": {
+    "results": [
+      "results/sparc_results.json"
+    ],
+    "figures": [
+      "figures/sparc_rar.png"
+    ],
+    "certificates": [
+      "certificates/families_certificate.json",
+      "certificates/graph_certificate.json",
+      "certificates/o1_o3_certificate.json",
+      "certificates/o2_certificate.json",
+      "certificates/o2_elimination_certificate.json",
+      "certificates/o4_certificate.json",
+      "certificates/o5_o6_certificate.json"
+    ]
+  },
+  "all_passed": true,
+  "failed": []
+}

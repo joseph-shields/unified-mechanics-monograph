@@ -1,0 +1,65 @@
+{
+  "generated": "2026-07-27T15:15:06",
+  "python": "3.12.10",
+  "numpy": "2.4.4",
+  "enumeration": "all rank-3 root subsystems of E8 up to W(E8)-conjugacy, complete by transitivity of W on the 240 roots",
+  "distinct_spans_examined": 2667,
+  "pairings": [
+    {
+      "decayed": "A1+A1+A1",
+      "decayed_rank": 3,
+      "decayed_roots": 6,
+      "surviving": "D4+A1",
+      "surviving_rank": 5,
+      "surviving_roots": 26,
+      "instances": 945
+    },
+    {
+      "decayed": "A2+A1",
+      "decayed_rank": 3,
+      "decayed_roots": 8,
+      "surviving": "A5",
+      "surviving_rank": 5,
+      "surviving_roots": 30,
+      "instances": 1344
+    },
+    {
+      "decayed": "A3",
+      "decayed_rank": 3,
+      "decayed_roots": 12,
+      "surviving": "D5",
+      "surviving_rank": 5,
+      "surviving_roots": 40,
+      "instances": 378
+    }
+  ],
+  "rank5_survivors": [
+    {
+      "decayed": "A1+A1+A1",
+      "decayed_rank": 3,
+      "decayed_roots": 6,
+      "surviving": "D4+A1",
+      "surviving_rank": 5,
+      "surviving_roots": 26,
+      "instances": 945
+    },
+    {
+      "decayed": "A2+A1",
+      "decayed_rank": 3,
+      "decayed_roots": 8,
+      "surviving": "A5",
+      "surviving_rank": 5,
+      "surviving_roots": 30,
+      "instances": 1344
+    },
+    {
+      "decayed": "A3",
+      "decayed_rank": 3,
+      "decayed_roots": 12,
+      "surviving": "D5",
+      "surviving_rank": 5,
+      "surviving_roots": 40,
+      "instances": 378
+    }
+  ]
+}

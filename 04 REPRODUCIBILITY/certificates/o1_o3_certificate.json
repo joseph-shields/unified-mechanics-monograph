@@ -1,0 +1,24 @@
+{
+  "generated": "2026-07-27T15:15:07",
+  "O1": {
+    "reduction": "averaging over W(A3)",
+    "group_order": 24,
+    "group_is_S4": true,
+    "C_is_idempotent": true,
+    "C_is_symmetric": true,
+    "fixed_subspace_dimension": 5,
+    "decayed_dimension": 3
+  },
+  "O3": {
+    "A3_roots": 12,
+    "D5_roots": 40,
+    "mixed_roots": 188,
+    "dim_A3": 15,
+    "dim_D5": 45,
+    "total_dim": 248,
+    "matter_buckets": {
+      "3/4": 128,
+      "1": 60
+    }
+  }
+}

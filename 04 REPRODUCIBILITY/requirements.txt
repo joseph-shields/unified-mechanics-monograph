@@ -1,0 +1,7 @@
+# Unified Mechanics, reproducibility layer
+# Python 3.11 or later. Pinned to the versions the Fifth Printing certificates were
+# generated under; later versions are expected to work and the run manifest records
+# whatever was actually used.
+numpy>=1.26,<3
+scipy>=1.11,<2
+matplotlib>=3.8,<4

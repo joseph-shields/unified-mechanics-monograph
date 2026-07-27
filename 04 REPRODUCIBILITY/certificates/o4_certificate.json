@@ -1,0 +1,140 @@
+{
+  "generated": "2026-07-27T15:15:02",
+  "python": "3.12.10",
+  "roots": 240,
+  "all_norm_two": true,
+  "sum_of_all_roots_is_zero": true,
+  "adjacency": "two roots joined when their difference is a root, i.e. inner product 1",
+  "degree": [
+    56
+  ],
+  "hamiltonian_cycle_found": true,
+  "seed": 0,
+  "every_root_visited_once": true,
+  "every_step_is_a_root": true,
+  "walk_returns_to_origin": true,
+  "cycle_length": 240,
+  "witness_first_12_vertices": [
+    [
+      1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      2,
+      0,
+      -2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      -2,
+      0
+    ],
+    [
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      -2,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -2,
+      2
+    ]
+  ],
+  "witness_sha256": "fb470c1eeea556c7d9531b13ff105b81a745ff8240a0b44a94324cae216d0a58"
+}

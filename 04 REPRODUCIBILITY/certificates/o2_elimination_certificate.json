@@ -1,0 +1,116 @@
+{
+  "generated": "2026-07-27T15:15:06",
+  "tests": {
+    "T10": "decayed part must host a closed triangular history",
+    "T25": "decayed part must be irreducible, one operator"
+  },
+  "candidates": [
+    {
+      "candidate": "A1+A1+A1",
+      "roots": 6,
+      "irreducible_components": 3,
+      "irreducible": false,
+      "contains_closed_triangle": false,
+      "triangle_witness": null,
+      "surviving_symmetry": "D4+A1 = so(8) + su(2)",
+      "surviving_rank": 5,
+      "surviving_roots": 26,
+      "surviving_components": 2,
+      "passes_T10_closure_test": false,
+      "passes_T25_one_operator_test": false
+    },
+    {
+      "candidate": "A2+A1",
+      "roots": 8,
+      "irreducible_components": 2,
+      "irreducible": false,
+      "contains_closed_triangle": true,
+      "triangle_witness": [
+        [
+          -2,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "surviving_symmetry": "A5 = su(6)",
+      "surviving_rank": 5,
+      "surviving_roots": 30,
+      "surviving_components": 1,
+      "passes_T10_closure_test": true,
+      "passes_T25_one_operator_test": false
+    },
+    {
+      "candidate": "A3",
+      "roots": 12,
+      "irreducible_components": 1,
+      "irreducible": true,
+      "contains_closed_triangle": true,
+      "triangle_witness": [
+        [
+          -2,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "surviving_symmetry": "D5 = so(10)",
+      "surviving_rank": 5,
+      "surviving_roots": 40,
+      "surviving_components": 1,
+      "passes_T10_closure_test": true,
+      "passes_T25_one_operator_test": true
+    }
+  ],
+  "survivors": [
+    "A3"
+  ]
+}
