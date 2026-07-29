@@ -1,0 +1,75 @@
+{
+  "generated": "2026-07-29T16:31:15",
+  "status": {
+    "kinematic_identity": "proved from definitions",
+    "weak_field_metric_map": "derived from the reconstruction ansatz",
+    "schwarzschild_profiles": "exactly represented using GR-toolkit profiles; not independently derived",
+    "stress_tensor": "standard tensor from the proposed two-scalar action",
+    "source_sector": "proposed and exercised with a toy smooth source",
+    "G": "calibration/toolkit input, not derived"
+  },
+  "baseline_cell": {
+    "rho_L_J_m3_input": 5.323976850695367e-10,
+    "tau0_s": 2.928157773134916e-13,
+    "a0_m": 8.778396162199228e-05,
+    "a0_microns": 87.78396162199228,
+    "eps0_J": 3.6014856394536575e-22,
+    "eps0_meV": 2.2478705300190125,
+    "n0_m3": 1478272408578.3142
+  },
+  "exact_identity": {
+    "definitions": "T=exp(-alpha), Psi=exp(alpha+nu/3)",
+    "consequence": "T Psi = exp(nu/3)",
+    "max_numerical_error": 2.220446049250313e-16
+  },
+  "weak_field": {
+    "Phi": "-c^2 alpha",
+    "Psi_Newtonian_gauge": "-c^2(alpha+nu/3)",
+    "gamma": "1+nu/(3 alpha)",
+    "lensing_potential": "Phi+Psi",
+    "cassini_gamma_minus_1": {
+      "central": 2.1e-05,
+      "sigma": 2.3e-05
+    },
+    "conservative_two_sigma_abs_gamma_minus_1": 6.7e-05,
+    "corresponding_abs_nu_over_alpha_bound": 0.000201
+  },
+  "schwarzschild_mapping": {
+    "geometrized_solar_mass_m": 1476.6696910334392,
+    "areal_coordinate_T_Psi_r_error": 1.1102230246251565e-16,
+    "isotropic_coordinate_metric_reconstruction_error": 2.220446049250313e-15,
+    "alpha_exact_solar_surface": 2.122571259716845e-06,
+    "alpha_Newtonian_solar_surface": 2.122566754396204e-06,
+    "weak_relative_error_solar_surface": -2.1225768607191497e-06,
+    "interpretation": "The metric is represented exactly once the GR profile is supplied."
+  },
+  "covariant_program": {
+    "action": "S = integral sqrt(-g) [c^4 R/(16 pi G) - 1/2 K_IJ grad(q^I).grad(q^J) - U(q) + L_m] d^4x, q=(alpha,nu); phase theta defines the future-directed congruence u_mu.",
+    "stress_tensor": "T^bubble_mn = K_IJ partial_m q^I partial_n q^J - g_mn[1/2 K_IJ partial_r q^I partial^r q^J + U(q)].",
+    "field_equations": "K_IJ box q^J - dU/dq^I = -J_I; Einstein/GR toolkit: G_mn = (8 pi G/c^4)(T^matter_mn + T^bubble_mn).",
+    "phase_role": "u_mu = -grad_mu theta/sqrt(-grad theta squared) fixes future time orientation"
+  },
+  "toy_source": {
+    "source": "smooth Gaussian with total solar mass",
+    "alpha_equation": "laplacian alpha = -4 pi G rho/c^2",
+    "nu_equation": "(laplacian-lambda^-2)nu = -beta 4 pi G rho/c^2",
+    "beta_nu": 1e-05,
+    "lambda_nu_m": 29919574140.0,
+    "max_abs_gamma_minus_1": 3.2202329716124467e-06,
+    "poisson_relative_L2_residual": 1.2539291923638842e-05,
+    "note": "Toy closure only; beta and lambda are not derived."
+  },
+  "forward_time_inward": {
+    "definition": "s=r_ref-r, so inward dr/dtau<0 implies ds/dtau>0",
+    "proper_time_condition": "T=dtau/dt>0 outside the horizon",
+    "numerical_check": true
+  },
+  "next_required_derivations": [
+    "derive K_IJ, U(alpha,nu), and matter currents J_I from the least-action microphysics",
+    "fix the absolute coupling now represented by G",
+    "construct a fully covariant definition of bubble number density and size",
+    "test the density/slip mode against Cassini, lensing, pulsars and cosmology",
+    "derive a granularity transfer function near the predicted baseline scale instead of assuming a Yukawa form"
+  ],
+  "figure": "bubble_field_rigorous_profiles.png"
+}

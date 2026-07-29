@@ -1,0 +1,58 @@
+{
+  "generated": "2026-07-29T16:31:23",
+  "audited": "bubble-field-closure-attack-package",
+  "leptons": {
+    "sigma": {
+      "electron": 3075444.770222665,
+      "muon": 379019135.26191634,
+      "tau": 36.085764226961224
+    },
+    "class_size": 3480,
+    "hits_within_1pc_ratio1": 5,
+    "hits_within_1pc_ratio2": 2,
+    "verdict": "numerology; do not carry forward"
+  },
+  "weak": {
+    "bridge_GeV": 5239.678514813117,
+    "candidate_GeV": 246.4536431506293,
+    "relative_error": 0.0009503431209867408,
+    "verdict": "the geometric-mean bridge is structural; the three-factor prefactor is fitted"
+  },
+  "G_bridge": {
+    "q_obs": 1.1491556219409747e-123,
+    "effective_exponent": 241.04974513992707,
+    "model": 1.147448544078669e-123,
+    "ratio": 0.9985144937467891,
+    "exponent_is_derived": "240 E8 roots + 1 readout",
+    "prefactor_is_fitted": true,
+    "verdict": "one derived exponent, one fitted prefactor; genuinely falsifiable once Lambda improves"
+  },
+  "solid": {
+    "source_sector": "exact isotropic Einstein equations in bubble variables, exact Schwarzschild, constant-density star",
+    "identifiability": "GR fixes A and B, not alpha_L and nu separately; independently confirms gamma = 1 for any response ratio",
+    "constitutive_split": {
+      "alpha_L_over_alpha_M": 0.4472135954999579,
+      "nu_over_alpha_M": 1.6583592135001264,
+      "sign": "positive, crowding"
+    },
+    "my_confinement_claim": "WITHDRAWN; sigma = E^2/(hbar c) identically, so the string tension calculation was a change of units"
+  },
+  "verdict": {
+    "keep": [
+      "exact source sector and star reconstruction",
+      "the identifiability theorem",
+      "alpha_L = (r/u) alpha_M, crowding with nu = 1.66 alpha_M",
+      "the geometric-mean energy bridge"
+    ],
+    "real_bet": [
+      "q = r^241 (1-r^3)^2, falsifiable once Lambda improves"
+    ],
+    "reject": [
+      "the charged lepton spectrum",
+      "the weak VEV prefactor"
+    ],
+    "withdrawn_from_my_own_work": [
+      "the string tension, which is an identity"
+    ]
+  }
+}
