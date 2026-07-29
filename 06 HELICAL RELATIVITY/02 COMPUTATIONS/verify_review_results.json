@@ -1,0 +1,65 @@
+{
+  "generated": "2026-07-29T21:54:39",
+  "purpose": "independent re-derivation of the review's corrections, plus one structural result the review left open",
+  "review_corrections_upheld": [
+    "the action lock was asserted, not derived",
+    "T P = exp(nu/3), so T P = 1 is the nu = 0 branch",
+    "the Schwarzschild profile was supplied to the integrator",
+    "the two-body calculation was a change of variables"
+  ],
+  "check_1_action_lock": {
+    "action_is_identically_hbar": true,
+    "cell_area_proportional_to": "tau^2, not the action",
+    "verdict": "review correct; the lock was asserted, not derived"
+  },
+  "check_2_identity": {
+    "T_times_P": "exp(nu/3)",
+    "draft_claim_holds_iff": "nu = 0"
+  },
+  "check_3_cassini": {
+    "cassini_gamma_minus_1": [
+      2.1e-05,
+      2.3e-05
+    ],
+    "two_sigma_bound": 6.7e-05,
+    "nu_over_alpha_bound": 0.000201,
+    "readings": [
+      {
+        "reading": "size only, nu = 0",
+        "nu_over_alpha": 0.0,
+        "gamma_minus_1": 0.0,
+        "sigma_from_cassini": 0.9130434782608695
+      },
+      {
+        "reading": "density and size contribute equally",
+        "nu_over_alpha": 3.0,
+        "gamma_minus_1": 1.0,
+        "sigma_from_cassini": 43477.34782608695
+      },
+      {
+        "reading": "density dominates, nu = 6 alpha",
+        "nu_over_alpha": 6.0,
+        "gamma_minus_1": 2.0,
+        "sigma_from_cassini": 86955.60869565218
+      },
+      {
+        "reading": "bubbles tile exactly, nu = -3 alpha",
+        "nu_over_alpha": -3.0,
+        "gamma_minus_1": -1.0,
+        "sigma_from_cassini": 43479.17391304348
+      }
+    ]
+  },
+  "check_4_completion": {
+    "T_tt": "f*(K*f*Derivative(alpha(r), r)**2 + 2*U)/2",
+    "T_rr": "K*Derivative(alpha(r), r)**2/2 - U/f",
+    "vacuum_forces": "alpha' = 0",
+    "conclusion": "the GR-coupled completion cannot give the Schwarzschild exterior with varying alpha; the emergent-metric completion is forced"
+  },
+  "new_result": "the GR-coupled completion is excluded: a minimally coupled bubble scalar forces alpha' = 0 in vacuum, so the emergent-metric completion is the only one available",
+  "surviving_from_draft": [
+    "the 87.8 micron baseline cell",
+    "the necessity of two independent handles",
+    "the spatial sector carrying half the light bending"
+  ]
+}

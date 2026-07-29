@@ -1,0 +1,119 @@
+{
+  "generated": "2026-07-29T21:54:38",
+  "real_form": "so(7,1), derived in attack 14",
+  "cartan": {
+    "n_real_nonzero": 2,
+    "values": [
+      -1.17,
+      1.17
+    ],
+    "verdict": "cannot be the mass operator; at most two, equal and opposite"
+  },
+  "diagonal": {
+    "trials": 200,
+    "counts_seen": [
+      0,
+      2
+    ],
+    "max": 2,
+    "verdict": "obstruction: the mass operator is not in so(3)+so(4,1)"
+  },
+  "boundary": {
+    "trials": 300,
+    "counts_seen": [
+      5,
+      9
+    ],
+    "max": 9,
+    "example": [
+      -18.064541996,
+      -13.462541229,
+      -7.099888167,
+      -6.709398901,
+      -2.755565097,
+      -2.514376922,
+      -1.163988181,
+      -1.009164997,
+      -0.337684936
+    ]
+  },
+  "family_time_operator": {
+    "support": "the three (family, time) directions",
+    "rows": [
+      {
+        "v": [
+          1,
+          0,
+          0
+        ],
+        "n_real": 1,
+        "spectrum": [
+          1.0
+        ]
+      },
+      {
+        "v": [
+          1,
+          1,
+          0
+        ],
+        "n_real": 1,
+        "spectrum": [
+          2.0
+        ]
+      },
+      {
+        "v": [
+          1,
+          1,
+          1
+        ],
+        "n_real": 1,
+        "spectrum": [
+          3.0
+        ]
+      },
+      {
+        "v": [
+          1,
+          2,
+          3
+        ],
+        "n_real": 1,
+        "spectrum": [
+          14.0
+        ]
+      },
+      {
+        "v": [
+          0.3,
+          1.0,
+          2.7
+        ],
+        "n_real": 1,
+        "spectrum": [
+          8.38
+        ]
+      },
+      {
+        "v": [
+          1,
+          -1,
+          2
+        ],
+        "n_real": 1,
+        "spectrum": [
+          6.0
+        ]
+      }
+    ],
+    "finding": "spectrum depends only on |v|; one scale, fixed ratios, no family splitting"
+  },
+  "established": [
+    "no element of so(3)+so(4,1) gives three distinct nonzero real eigenvalues on the 15",
+    "the boundary block 15 does carry three or more",
+    "the (family,time) restriction has a spectrum depending only on |v|, so it sets a scale and cannot split families"
+  ],
+  "conclusion": "the mass operator is an element of the 15 with support beyond the three (family,time) directions; the 12 remaining components carry the splitting",
+  "next_step": "fix the 12 components by stationarity under the same action that gave B_15 = -R_15"
+}
