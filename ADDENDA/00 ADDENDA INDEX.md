@@ -16,6 +16,9 @@ This file is the only one that changes when an addendum is added.
 | **A01** | [The Resolution Operator](A01%20The%20Resolution%20Operator) | Derives the exponent of `H₅` from the Passage and Record theorem, makes the operator unit-invariant as `N = q/δq`, fixes its domain, and locates its join with the floor at `40φ³`. Demotes two apparent contacts with the corpus constants to golden-ratio identities carrying no information. | **Extends** Personal Relativity. Touches no printing. |
 | **A02** | [The Field Derivation Suite](A02%20The%20Field%20Derivation%20Suite) | Re-reads the observable dictionary in field vocabulary, and replaces the hand-chosen `n × ε_floor` tolerance with a traversal depth read off the colour. | **Sharpens** the cosmology sector of the older programme. |
 | **A03** | [The Forward Solver](A03%20The%20Forward%20Solver) | Forward-integrates recombination, the sound horizon and the acoustic angle from the invariants alone, with no Boltzmann hierarchy and no fitted parameter. | **Extends.** Supplies the two-basin reading of the Hubble measurements. |
+| **A04** | [The Internal State Instrument](A04%20The%20Internal%20State%20Instrument) | Reads the operator with δq as the object’s own spread rather than the observer’s error, giving every body a resolution before anyone measures it. Shows the reading is independent of gravitational strength. | **Extends** A01. Touches no printing. |
+| **A05** | [Prediction From The Colour Average](A05%20Prediction%20From%20The%20Colour%20Average) | Answers what use a number is in a framework that does not sit still: the prediction is the average over the evolution, not the fixed point, and the colour graph is what reads it. | **Extends** the colour field. |
+| **A06** | [The Whole Thing, Once](A06%20The%20Whole%20Thing%20Once) | The compressed monograph. Twelve pages carrying the logic limb, the physics limb, every grade and every refusal, with the dictionary between the old vocabulary and the new. | **Extends nothing and replaces nothing.** The join. |
 
 ---
 
@@ -102,6 +105,83 @@ absolute comparison waits on a three-level recombination network.
 
 **OPEN.** `ω_b = 0.0214` against Planck's 0.02237, about 4 per cent low, and the
 same number is independently constrained by BBN deuterium.
+
+## A04 · The Internal State Instrument
+
+Resolution belongs to the object: `N = g/δg`, with `δg` the body's own equator-to-pole
+half-spread, computed from mass, the two radii and the rotation period. No value of
+surface gravity is used as input.
+
+**PROVED as a construction.** Ten bodies order by definitional sharpness, and the
+join at 40φ³ cuts between Mars (N = 121.8) and Earth (N = 196.4). Gas giants and a
+millisecond pulsar fall below it; the Moon, Sirius B and the Sun fall above.
+
+**PROVED.** The reading is **decoupled from gravitational strength.** Sirius B has
+two thousand times Earth’s compactness and is one of the sharpest bodies in the
+table, N = 9666. PSR B1937+21 is the most compact entry by seven orders of magnitude
+and sits at N = 10.6, below the join beside Jupiter. N tracks flattening and spin,
+not mass.
+
+**PROVED.** The linear form 5δq/q holds only above the join, failing by 26 per cent
+at Saturn. So 40φ³ is both where the deficit drops under the floor and where the
+linear reading becomes trustworthy.
+
+**PROVED.** Unit-free across five unit systems including furlongs per fortnight
+squared, N = 8.82625 identically.
+
+**OPEN, and not claimed.** Nothing here identifies the internal state with a
+measured observable. For Jupiter the gap is 12.5 m/s², half the external value, so
+it is a different quantity and not a refined estimate of the same one.
+
+
+## A05 - Prediction From The Colour Average
+
+The complaint answered: if every quantity is the endpoint of a flow rather than a
+constant, what use is a number. The answer is that the prediction is not the fixed
+point, because `<f(x)>` is not `f(<x>)` whenever the observable is curved, and the
+gap is the curvature against the spread of the flow. Nothing is adjustable: the map
+is the framework's update, the spread is the floor, the forms are the framework's.
+
+**PROVED.** Five of six observables move toward measurement under the evolved
+average. Omega_b closes by 1.25 points, Omega_DE by 0.20, Omega_c by 0.15, Y_He by
+0.11, n_s by 0.09.
+
+**PROVED.** The colour graph tells you whether an observable has an evolution to
+average before anything is computed. Omega_c and Omega_DE carry real hue
+distributions, mean 75.14 deg spread 9.49 and mean 96.95 deg spread 2.87. The other
+four are one pure channel and their hue does not move at all: the value evolves, the
+colour class does not.
+
+**PROVED as a reading.** tau moves away, because all three matter-channel entries are
+convex so averaging raises all three, and tau was already above measurement. A
+mechanism that improved everything would be a free parameter in disguise. tau then
+resolves on its own path at `2r^3 (1-r^3)^3 = 0.0539451`, which is -0.06 sigma, and
+three wins on assumption count rather than on residual: it is the only option that
+imports no new number, since the three is already fixed by the Hubble basins over
+the same interval.
+
+## A06 - The Whole Thing, Once
+
+Twelve pages. The document exists because the logic work and the physics work were
+built years apart in different vocabularies and nobody had written the dictionary
+between them, so the corpus read as two bodies of work when it is one.
+
+Carries, each stated once at full strength: the string question and the one root;
+R1-R5 and the self-audit (T1-T6, TP, ML survivors; C1-C3 refutations; R1'-R2'
+repairs); the three no-gos with their single escapes, composing into the amplitude
+chain from Trail Conservation; the trail recoveries including the -1/12 as
+convergent finite asymptotics with no regulator, and the gravity sector
+576 = 299 + 276 + 1; the cell and the exact identity a0^2 = l_P L_Lambda; the
+colour field and the structural tolerance band; prediction from the colour average;
+the observable suite in field vocabulary; thirteen sector closed forms; the two
+basins; the mass operator; the internal state instrument; and the full ledger of
+what is open and what was dissolved.
+
+**The severest result in it is C3, and it is self-inflicted:** the golden structure
+is not forced by the axioms. Four candidate selection functionals have been tested
+and all four preferred non-golden structure. Everything golden waits on the
+extremal-family problem, and that is recorded as trending against.
+
 
 ---
 
