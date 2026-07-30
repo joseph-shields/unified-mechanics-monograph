@@ -1,0 +1,2 @@
+92b803a6b4f3de064b09b7e363796ca7170046399f58a6c2a1b43551418df50c  ./helical_multiplication.py
+40c4f0fa4696dd6e4b04d764fc5b091c64fea392881aa9dc77292075d6e821b5  ./helical_multiplication_results.json
