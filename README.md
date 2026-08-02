@@ -1,70 +1,125 @@
 # Unified Mechanics
 
-**A framework derived from one line: φ² = φ + 1.**
+**Scientific Edition.** Joseph Shields, 2 August 2026.
 
-Six symbols. The longest derivation chain in the whole corpus is seven steps.
+A framework derived from one line: `φ² = φ + 1`. This edition rebuilds the corpus as one
+chronological scientific argument in LaTeX, and separates, at the point of use, what is
+exact algebra from what is a physical identification, an interpretation, or an open
+obligation.
+
+This text is corrigible. Nothing here is frozen. Corrections are recorded by version and
+supersession, and every scientific claim stays open to being wrong.
 
 ---
 
-## Start here
+## The volumes
 
-📖 **[`00 START HERE/00 The Corpus Atlas.pdf`](00%20START%20HERE/)** — the map. What is here, which file governs, which route to read it by.
+| | | Pages |
+|---|---|---|
+| **I** | Foundations of Logical and Physical Action | 32 |
+| **II** | Carrier Geometry, Fields, and Gravitation | 23 |
+| **III** | Traversal, Time, Observation, and Readout | 19 |
+| **IV** | Phenomenology, Cosmology, and Physical Applications | 31 |
+| **V** | Formal Register, Methods, and Reproducibility | 76 |
+| **I–V** | [Complete Series](Unified_Mechanics_Complete_Series.pdf), the five volumes as one book | 170 |
 
-Then read **A World of Distinctions** start to finish. It is the book.
+## The derivation programme
 
-## The four books
+[**Unified_Mechanics_Derivation_Programme.pdf**](Unified_Mechanics_Derivation_Programme.pdf)
+· 61 pages · *From Electromagnetism to Complete Physical Closure*
 
-| | |
-|---|---|
-| **A** · A World of Distinctions | The argument. Twenty-seven movements, beginning to end. |
-| **B1** · Universopedia, The Observational Standard | What may honestly be said about a measured system. |
-| **B2** · Universopedia, Systems of Interpretation | The casebook. Where it grips and where it slides off. |
-| **C** · Unified Mechanics, The Formal Register | The audit surface. For checking rather than reading. |
+A companion dossier that takes the standard unification hierarchy, twelve boxes from
+electricity and magnetism up to a theory of everything, and treats every connecting line
+as a **derivation obligation** rather than a label. Each line is typed as a decomposition,
+a symmetry reduction, a controlled limit, or a closure target, and then either discharged
+or left standing with the calculation that would discharge it named.
 
-## Layout
+What it closes, from displayed premises: electricity and magnetism as the observer split
+of one antisymmetric field; the electroweak reduction to `U(1)_EM` with `Q = T³ + Y` and
+`e = g sin θ_W`; the strong sector and one anomaly-free generation; the `SU(5)`, `SO(10)`
+and `E₆` branchings that reconstruct the full hypercharge pattern; the Einstein equation
+and the Friedmann background. What it leaves open, with a named selecting calculation for
+each: chirality as an index, the Yukawa spectrum, the strong vacuum angle, the microscopic
+quantum-gravity state rule, and the cosmological observation map.
 
-```
-00 START HERE          Atlas, edition note, freeze manifest, SHA256SUMS
-01 CORE BOOKS          A, B1, B2, C + .docx sources
-02 TECHNICAL PAPERS    Papers Index, then Papers 04–26 as issued
-03 COMPANION           teaching surfaces; not sources for formal claims
-04 REPRODUCIBILITY     data, scripts, certificates
-90 ARCHIVE             superseded printings, byte-exact. Governs nothing
-```
+The dossier's own rule is that no row may be closed by assertion.
 
-## Reproduce every number
+## Building from source
+
+Everything in [`LaTeX source`](LaTeX%20source) builds with **XeLaTeX** and the
+[Libertinus](https://github.com/alerque/libertinus) fonts, which ship with TeX Live and
+MiKTeX. Bibliography via BibTeX.
 
 ```bash
-cd "04 REPRODUCIBILITY" && python run_all.py
+cd "LaTeX source" && bash build.sh
 ```
 
-Fourteen scripts. Regenerates every certificate and writes a run manifest with the environment, every input hash and every output hash. Exits nonzero on failure. **If a number does not regenerate from here, it is not frozen.**
+That builds the five volumes and the omnibus, running BibTeX between passes, and reports
+page count and error count for each. The derivation programme builds the same way from
+`LaTeX source/derivation-programme/main.tex`.
 
-## The claim
+`umseries.sty` carries the whole design: page geometry, the heading grammar, and the seven
+graded-claim environments. Change it once and every document follows.
 
-Every statement carries a grade: `PROVED` · `CONDITIONAL` · `PROPOSED` · `POSTULATE` · `OPEN` · `DISSOLVED`. They are never mixed, and every open question states *why* it is open.
+## How to read a claim
 
-**The argument is closed**, and that is checkable rather than asserted. The dependency graph ships as source (`nodes.csv`, `dependencies.csv`), every edge carrying the phrase from the Register that licenses it. It is acyclic across 71 nodes and 82 edges, and **no result depends on any open obligation**. The open items are a forward work programme, not holes holding anything up.
+Every result is set in a ruled block whose label is its status. The labels are not
+decoration and they are not interchangeable:
+
+| Status | Means |
+|---|---|
+| **Derived** | Follows from the displayed premises. |
+| **Conditionally derived** | Follows once a named physical-identification premise is added. |
+| **Interpretation-dependent** | More than one internally coherent realisation survives. |
+| **Open** | No unique continuation under present premises. No contradiction inferred. |
+| **Contradicted** | An explicit inconsistency or a quantitative exclusion has been shown. |
+| **Superseded** | A later formulation replaces it, with provenance preserved. |
+
+Where several realisations survive, at most three are carried forward, and the observable
+capable of separating them is stated. "Open" means not yet selected, not unfalsifiable.
 
 ## What it derives
 
-Superposition, complex phase, the Born rule and unitarity. The Lorentzian signature, twice, by independent routes. The golden proportion and the three weights, with the Boundary weight identified exactly as the interference term of a quantum probability. E8 as the carrier, conditional on a single demand. Gravity as the surviving part of carrier nonclosure. Gauge, matter and mass as three ways an operation can stand with respect to one operator.
+Superposition, complex phase, the Born rule and unitarity. The Lorentzian signature, twice,
+by independent routes. The golden proportion and the three weights, with the Boundary
+weight identified exactly as the interference term of a quantum probability. `E₈` as the
+carrier, conditional on a single demand, and the forced `A₃` decay leaving `so(10)` with
+matter in the spinor **16**, one generation with the right-handed neutrino included rather
+than added. Three spatial dimensions and `so(10)` are the same fact. All sixteen Standard
+Model charges of one generation follow from tracelessness on a `3+2` split, with
+`sin²θ_W = 3/8` at unification and anomalies cancelling by summation. Gravity as the
+surviving part of carrier nonclosure, through a MacDowell–Mansouri projection of the same
+weighted square. The Planck-to-cosmological hierarchy in closed form, `r^−120`, an exponent
+that is half the carrier's root count.
 
-The decayed subsystem is forced to A3, so the surviving gauge algebra is **so(10)**, matter sits in the **spinor 16** (one generation, right-handed neutrino included rather than added), and the family index splits 1 + 3 under the decay's own Weyl group, giving **three families**. Three spatial dimensions and so(10) are the same fact. A complete carrier closure through all 240 roots is proved to exist by explicit construction.
+The parameter-free vacuum readout `λ = (4π/√3) r²⁴⁰ = 2.860333×10⁻¹²²` sits 0.28σ from the
+measured cosmological constant.
 
-The action is the same square that gives gravity, applied to the whole carrier: **all sixteen Standard Model charges of one generation** follow from tracelessness on a 3+2 split, with sin²θ_W = 3/8 and anomalies cancelling by summation. Hydrogen's n² degeneracy and the −1/n² law follow from the carrier via Perelman and Fock with no atomic input. The Planck-to-cosmological hierarchy has a closed form, **r^−120**, an exponent that is half the carrier's root count.
+**What it does not have is a single mass.** At this order the three families come out
+degenerate, which is wrong, and the Yukawa hierarchy is the open problem.
 
-**What it does not have is a single mass.** At this order the three families come out degenerate, which is wrong, and the Yukawa hierarchy is the open problem.
+## Under review
 
-The parameter-free vacuum readout λ = (4π/√3)r²⁴⁰ = 2.860333×10⁻¹²² sits **0.28σ** from the measured cosmological constant.
+Two numerical claims are being re-examined and should not be cited as settled:
+
+- **The low-scale weak angle.** `W_M/W_B = 1/(2√5) = 0.223607`. This sits 1.5σ from the
+  on-shell value `1 − m_W²/m_Z²` and 190σ from MS-bar at `M_Z`. The two schemes differ from
+  each other by 3.5 percent, which is larger than the effect. The scheme has to be fixed by
+  argument before the comparison, not after.
+- **The fine-structure ansatz.** `φ¹⁰ + φ⁵ + φ² + φ⁻² = 137.082039` against CODATA
+  `137.035999177(21)`, which is 336 ppm out on a quantity measured to 0.15 ppb. It is
+  further out, in sigmas, than the charged-lepton formulas already withdrawn.
 
 ## What would kill it
 
-Named, in Paper 24 up front and Paper 21 Section Twelve. A confirmed gauge structure outside so(10). A fourth light generation. Dark matter carrying visible gauge charge. An observer boundary of nonzero genus. And the standing one: a running, self-holding system that fails to return quantised retention at powers of r, under a convention declared before the count. That last is the framework's own stated condition of defeat and it has not been run.
-
-Everything above reproduces from `04 REPRODUCIBILITY`. Where this is wrong, it should be possible to show it is wrong without asking the author what he meant.
+A confirmed gauge structure outside `so(10)`. A fourth light generation. Dark matter
+carrying visible gauge charge. An observer boundary of nonzero genus. And the standing one:
+a running, self-holding system that fails to return quantised retention at powers of `r`,
+under a convention declared before the count.
 
 ---
 
-Joseph Shields, 2026. Corpus Edition, Fifth Printing, with Papers 22 to 26 issued after it.
-Portions prepared with Claude as a research and editorial assistant.
+Joseph Shields, 2026. Portions prepared with Claude as a research and editorial assistant.
+
+Where this is wrong, it should be possible to show that it is wrong without asking the
+author what he meant.

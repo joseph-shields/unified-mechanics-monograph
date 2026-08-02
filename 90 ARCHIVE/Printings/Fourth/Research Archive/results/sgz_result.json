@@ -1,1 +1,0 @@
-{"r": 0.30901699437494745, "ceiling": 0.02950849718747372, "ratio_pred": 2.2360679774997894, "cases": {"mitotic cut (A=Ki67+, B=DCX+ post-mitotic)": 0.2, "overlap-corrected (DCX+Ki67+ ~0.5 -> A)": 0.3, "fate cut (A=type1/2a uncommitted only)": 0.09090909090909091}}

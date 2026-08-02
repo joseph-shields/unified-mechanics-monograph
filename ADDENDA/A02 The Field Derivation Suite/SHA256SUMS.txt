@@ -1,2 +1,0 @@
-83dfd09e3c470d188ce7cce88c00ca49b293422bc0d9c1aaebacb8c04da4372c  ./um_field_suite.py
-d770be1b04b36970826c81f83a190a9715a566b8e968162700b54350cc9f018b  ./um_field_suite_results.json

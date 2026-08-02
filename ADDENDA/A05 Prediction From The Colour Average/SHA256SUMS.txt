@@ -1,3 +1,0 @@
-5b595ebace9cc34b5d7b260ee584a2b8ad2b04ed21b0e598b6fdde8fae06cbc8  ./colour_average_prediction.png
-722e3a8699ea778658224ca0b48d85bbf25a1bc8aef6075d53e9ea5721ef35c4  ./colour_average_prediction.py
-9793a4dfa44755b26ff53d454acba1e9c5b6172beda765477a0ed4444d1ebd82  ./colour_average_prediction_results.json
